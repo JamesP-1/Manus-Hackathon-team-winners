@@ -64,6 +64,8 @@ h1, h2, h3, p { margin: 0; }
 .tabs button.active { background: var(--elev); color: var(--ink); box-shadow: 0 1px 3px rgba(15, 31, 61, .12); }
 
 .panel-body { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; padding: 14px 18px 18px; scrollbar-width: thin; }
+/* Children keep their natural height; otherwise an overflow:hidden card (the destination) gets squashed to make room. */
+.panel-body > * { flex: none; }
 .panel-footer { padding: 10px 18px; font-size: 11px; line-height: 1.4; color: var(--faint); border-top: 1px solid var(--line); background: var(--surface); }
 
 /* shared primitives */
