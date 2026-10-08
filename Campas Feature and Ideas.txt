@@ -1,0 +1,216 @@
+CAMPAS — CAMPUS NAVIGATION FEATURE BRIEF
+==========================================
+
+Tagline: Right building. Right door. Right room.
+
+One-line pitch
+--------------
+Doorway is a campus navigation tool that solves the confusing final part of getting somewhere on campus: guiding students to the correct entrance, floor, corridor, and room — not merely the right building.
+
+The problem
+-----------
+Normal maps can get a student close to a building, but they often fail when it matters most. Students may be sent to the wrong side of a building, arrive at a locked entrance, not know which floor a room is on, or be left stranded when a path is closed. This is particularly stressful when someone is late, new to campus, carrying equipment, or needs a step-free route.
+
+Core promise
+------------
+Search for a room or destination in natural language and receive a simple, trustworthy "last 100 metres" route that tells you exactly where to enter and what to do next.
+
+Ideal user journey
+------------------
+1. A student searches: "HG12", "The Spark", "closest printer", or "my 10am lecture".
+2. Doorway shows the best route to the correct building entrance.
+3. At arrival, it switches to a clear arrival card with indoor guidance.
+4. The student follows a small number of human instructions and reaches the room.
+5. If anything is wrong, they report it in one tap so future directions improve.
+
+MVP FOR A HACKATHON
+--------------------
+Build a small, polished version for one DCU campus zone and 5–8 popular destinations:
+- The Spark
+- DCU Library
+- Student Union
+- One lecture building and a few real rooms
+- A café
+- A printer
+- A quiet study space
+- A water refill point, accessible toilet, or lift
+
+Keep the scope tight: one input, one excellent output. A working, visually polished route for a handful of real places is stronger than an unfinished map for the entire campus.
+
+Core features
+-------------
+
+1. Room and destination search
+   - Search room codes, building names, landmarks, and facilities.
+   - Example searches: "HG12", "library", "nearest microwave", "quiet place near me".
+   - Accept aliases and the language students actually use, not only formal campus labels.
+
+2. Correct entrance routing
+   - Route to a specific entrance rather than the centre of a building.
+   - Label entrances clearly: main entrance, reception entrance, accessible entrance, café entrance, east door, etc.
+   - Include a photo or visual cue for unfamiliar entrances.
+
+3. The Last 100 Metres arrival card
+   When a student reaches the building, show a simple card such as:
+   - Use: Main entrance beside the bike racks
+   - Go to: Floor 1
+   - Turn: Left at reception
+   - Landmark: Red staircase / vending machines
+   - Destination: HG12, about 45 seconds from the entrance
+
+4. Indoor navigation guidance
+   - Provide short, landmark-led instructions instead of pretending indoor GPS is perfectly reliable.
+   - Guide through floors, lifts, staircases, corridors, and reception areas.
+   - Optional room/floor mini-map for supported buildings.
+
+5. Accessible-route mode
+   - Offer a dedicated step-free route, not just the fastest route.
+   - Include verified ramps, lifts, automatic doors, accessible entrances, and known obstructions.
+   - Add a confidence label for accessibility information; never imply unverified accessibility is certain.
+
+6. Route preferences
+   Let users choose the route that suits the situation:
+   - Fastest
+   - Step-free
+   - Well-lit
+   - Covered / weather-friendly
+   - Avoid stairs
+
+7. Live route status and temporary disruptions
+   - Clearly mark paths, gates, entrances, lifts, or corridors as Open, Closed, or Temporarily diverted.
+   - Show a "Today on campus" layer for construction, open days, events, queue barriers, and high-footfall areas.
+   - Reroute around reported closures.
+
+8. Opening-hours context
+   - Show whether a café, office, printer, library area, or building is currently open.
+   - Display source and last-verified date rather than guessing.
+   - Use clear labels such as Open now, Closed, or Hours may be outdated.
+
+9. One-tap map issue reports
+   Let users improve the map in under ten seconds:
+   - Entrance wrong
+   - Path or gate closed
+   - Location moved
+   - Not accessible
+   - Hours incorrect
+   - Other
+
+   Reports go into a review queue. Show report freshness and confirmation status when possible.
+
+10. Trust and freshness labels
+   Instead of presenting imperfect information with false certainty, label it:
+   - Verified today
+   - Official campus information
+   - Community-reported 2 hours ago
+   - Needs verification
+   - May be outdated — check before travelling
+
+11. Useful nearby context
+   At a destination, show only helpful nearby essentials:
+   - Toilets and accessible toilets
+   - Water refill stations
+   - Printers
+   - Microwaves
+   - Lifts
+   - Quiet study spaces
+   - Bike parking
+   - Food and coffee
+
+12. Calm, late-friendly interface
+   The urgent route view should show only:
+   - Where to go now
+   - Time remaining / walking time
+   - Which entrance to use
+   - One next instruction
+   - A clear reroute or report button
+
+Quality-of-life improvements
+-----------------------------
+
+A. Natural-language and student-first search
+   - "Where is my 10am lecture?"
+   - "How do I get to HG12?"
+   - "Closest microwave"
+   - "Accessible entrance to The Spark"
+   - "Quiet place near the library"
+
+B. Saved places and repeat routes
+   - Save frequently used rooms, lecture halls, lockers, parking locations, and campus facilities.
+   - Show a quick "Get me there" button for favourites.
+
+C. Calendar-aware suggestions
+   - Optional integration: identify a lecture location from a calendar event.
+   - Suggest when to leave based on walking time.
+   - Example: "Your class in HG12 starts at 10:00. Leave in 8 minutes."
+
+D. Photo-based recognition
+   - Include entrance photos so students can visually confirm they are in the right place.
+   - Allow an uploaded photo to help identify an unclear building sign or entrance (future feature).
+
+E. Community validation
+   - Ask simple confirmation questions: "Is this route still correct?"
+   - Answers: Yes / Gate closed / Entrance moved / Not accessible / Other.
+   - Optionally recognise repeat contributors with a light "Campus Guide" badge.
+
+F. Poor GPS resilience
+   - Use GPS outdoors, but switch to landmark-based guidance near and inside buildings.
+   - Do not rely on a jumping blue dot for indoor navigation.
+
+G. Clear language and inclusive instructions
+   - Avoid campus jargon unless paired with a plain-language explanation.
+   - Use simple words, concise directions, high contrast, and readable type.
+   - Consider multilingual support and screen-reader-friendly route steps as future extensions.
+
+Common campus-map mistakes
+--------------------------
+
+1. Pin placed at the building centre
+   Problem: The user arrives on the wrong side of a large building.
+   Fix: Use entrance-level destination pins and entrance photos.
+
+2. Paths that are blocked, locked, or under construction
+   Problem: The technically shortest route is unusable.
+   Fix: Live route-status labels, community reports, and temporary rerouting.
+
+3. Navigation ends at the building door
+   Problem: The room is still hard to find inside.
+   Fix: The Last 100 Metres arrival card with floor, turn, lift/stairs, landmark, and estimated indoor walking time.
+
+4. Inconsistent building names or confusing room codes
+   Problem: Students do not know whether a nickname matches a formal building name.
+   Fix: Search aliases, room codes, landmarks, and natural-language queries.
+
+5. Accessibility routes are incomplete or unreliable
+   Problem: A suggested path may contain stairs, steep slopes, narrow doors, or a broken lift.
+   Fix: Verified step-free routes, accessible-entrance details, lift information, and confidence labels.
+
+6. Outdated or missing opening hours
+   Problem: A student walks to a closed facility.
+   Fix: Opening status with source and last-updated information.
+
+7. Weak GPS near or inside buildings
+   Problem: The user loses trust when their location marker jumps around.
+   Fix: Landmark-based guidance and static indoor route instructions.
+
+8. Fastest route is not safest or most comfortable
+   Problem: A path might be dark, exposed to rain, or unpleasant late at night.
+   Fix: Fastest, well-lit, covered, and step-free route preferences.
+
+9. Event disruption is not represented
+   Problem: Open days, maintenance, queues, and roadworks invalidate routes.
+   Fix: A prominent Today on Campus layer and time-limited disruption alerts.
+
+10. Errors cannot be reported
+    Problem: Users see a wrong route but the map never improves.
+    Fix: One-tap reports with a visible verification process.
+
+Possible future features
+------------------------
+- QR codes on campus signs that open the correct indoor route.
+- Lecture timetable import and automatic leave-now reminders.
+- Real-time lift outage integration.
+- Evening safety companion mode with well-lit routes.
+- Crowdsourced queue times for cafés, printers, and library services.
+- AR-style directional overlays for the last few steps.
+- Facilities filter: find the nearest available printer, microwave, water station, or quiet room.
+- Campus staff dashboard to review reports and push official disruption updates.
