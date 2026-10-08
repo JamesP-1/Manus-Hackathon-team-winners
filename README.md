@@ -20,6 +20,15 @@ On Windows PowerShell where npm.ps1 is blocked, use `npm.cmd` instead. Do not ch
 
 For this Manus session, the preview port is configured through project settings. Other developers can choose their own local port. Do not commit session-specific port settings or API keys.
 
+## Personal timetable feed
+
+The Timetable tab can load a student's own DCU timetable from `https://timetable.redbrick.dcu.ie/api/v3/timetable/events?course=<course-uuid>` (paste the feed link, the page link, or the bare id). The feed is iCalendar text and the server sends no `Access-Control-Allow-Origin` header, so the browser cannot call it directly. The app instead requests `/api/timetable/...` on its own origin:
+
+- `vite.config.mjs` proxies `/api/timetable` → `https://timetable.redbrick.dcu.ie/api/v3/timetable` for both `vite dev` and `vite preview` (TLS verification stays on; the dev server only reads the config on start, so restart it after changing the proxy).
+- The static `dist/` build has no server of its own. Whatever host serves it must apply the same rewrite, e.g. an nginx `location /api/timetable/ { proxy_pass https://timetable.redbrick.dcu.ie/api/v3/timetable/; proxy_ssl_server_name on; }`, a Netlify/Vercel rewrite from `/api/timetable/*` to `https://timetable.redbrick.dcu.ie/api/v3/timetable/:splat`, or an equivalent. Without it the panel shows a "response was not a calendar feed" error.
+
+Parsing (`src/lib/ical.ts`) and room resolution (`src/lib/timetable.ts`) run in the browser. Class content is never stored; the feed link is saved to `localStorage` only when the student ticks "Remember this link on this device", and "Disconnect" removes it. A saved copy of one feed lives in `tests/fixtures/dcu-timetable.ics` for the unit tests.
+
 ## Collaboration
 
 Read [plan.md](plan.md) for architecture and the exact contracts in [src/types.ts](src/types.ts). The active workstreams own:

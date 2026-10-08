@@ -1,8 +1,10 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import './routing.css';
 import type { Building, CampusMapProps } from '../types';
 import campusGeoJsonText from '../data/campus-buildings.geojson?raw';
+import pathsGeoJsonText from '../data/campus-paths.geojson?raw';
 import {
   featureKey,
   matchFootprints,
@@ -10,8 +12,27 @@ import {
   type CampusFeatureCollection,
   type FootprintMatch,
 } from '../lib/campusFootprints';
+import {
+  buildPathGraph,
+  formatDistance,
+  formatMinutes,
+  haversineMetres,
+  routeToBuilding,
+  WALKING_SPEED_MPS,
+  type LatLng,
+  type PathFeatureCollection,
+  type PathGraph,
+  type RouteResult,
+} from '../lib/routing';
 
 const campusCollection = JSON.parse(campusGeoJsonText) as CampusFeatureCollection;
+const pathCollection = JSON.parse(pathsGeoJsonText) as PathFeatureCollection;
+
+let pathGraphCache: PathGraph | null = null;
+function getPathGraph(): PathGraph {
+  if (!pathGraphCache) pathGraphCache = buildPathGraph(pathCollection);
+  return pathGraphCache;
+}
 
 const OSM_COPYRIGHT_URL = 'https://www.openstreetmap.org/copyright';
 const TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -26,6 +47,20 @@ const BUILDING_ZOOM = 18;
 const DCU_MAX_BOUNDS = L.latLngBounds([53.362, -6.278], [53.396, -6.232]);
 const MIN_ZOOM = 14;
 const MAX_ZOOM = 19;
+
+// Where the campus avenue meets Collins Avenue: Glasnevin's main entrance, approximately
+// (read off the OSM path network, not a verified entrance coordinate).
+const GLASNEVIN_MAIN_ENTRANCE: LatLng = [53.38765, -6.25844];
+// Approximate campus centres used only to decide whether a GPS fix is anywhere near DCU.
+const CAMPUS_CENTRES: LatLng[] = [
+  [53.3856, -6.2578], // Glasnevin
+  [53.3712, -6.2535], // St Patrick's
+  [53.3703, -6.2487], // All Hallows
+];
+const FAR_FROM_CAMPUS_METRES = 3000;
+// Position updates closer than this (metres) or sooner than this (ms) are coalesced.
+const MIN_MOVE_METRES = 10;
+const MIN_UPDATE_INTERVAL_MS = 2000;
 
 const CAMPUS_LABELS: Record<Building['campus'], string> = {
   glasnevin: 'Glasnevin',
@@ -59,6 +94,31 @@ const CAMPUS_STYLE: L.PathOptions = {
   fill: false,
   interactive: false,
 };
+const ROUTE_CASING_STYLE: L.PolylineOptions = {
+  color: '#ffffff',
+  weight: 9,
+  opacity: 0.9,
+  lineCap: 'round',
+  lineJoin: 'round',
+  interactive: false,
+};
+const ROUTE_STYLE: L.PolylineOptions = {
+  color: '#1663ef',
+  weight: 5,
+  opacity: 0.95,
+  dashArray: '10 8',
+  lineCap: 'round',
+  lineJoin: 'round',
+  interactive: false,
+};
+const ACCURACY_STYLE: L.PathOptions = {
+  color: '#1663ef',
+  weight: 1,
+  opacity: 0.6,
+  fillColor: '#1663ef',
+  fillOpacity: 0.12,
+  interactive: false,
+};
 
 const rootStyle: CSSProperties = {
   position: 'relative',
@@ -76,11 +136,15 @@ const hostStyle: CSSProperties = {
   height: '100%',
 };
 
-// Overlays are positioned top-left inline; styles.css moves them to the right edge on desktop.
-const overlayBase: CSSProperties = {
+// The status box is positioned top-left inline; styles.css moves it to the right edge on desktop.
+// Everything else lives in the .campus-map__stack column (routing.css) below it.
+const statusStyle: CSSProperties = {
   position: 'absolute',
   zIndex: 1000,
   left: 12,
+  top: 12,
+  maxWidth: 'min(360px, calc(100% - 24px))',
+  padding: '8px 10px',
   border: '1px solid rgba(15, 35, 57, 0.14)',
   borderRadius: 8,
   background: 'rgba(255, 255, 255, 0.94)',
@@ -90,32 +154,16 @@ const overlayBase: CSSProperties = {
   lineHeight: 1.35,
 };
 
-const statusStyle: CSSProperties = {
-  ...overlayBase,
-  top: 12,
-  maxWidth: 'min(360px, calc(100% - 24px))',
-  padding: '8px 10px',
-};
-
-const controlStyle: CSSProperties = {
-  ...overlayBase,
-  top: 58,
-  minHeight: 36,
-  padding: '8px 11px',
-  border: '1px solid #0b63ce',
-  background: '#ffffff',
-  color: '#0b4fa3',
-  cursor: 'pointer',
-  fontWeight: 700,
-  borderRadius: 7,
-};
-
 const selectionStyle: CSSProperties = {
-  ...overlayBase,
-  top: 106,
-  maxWidth: 'min(340px, calc(100% - 24px))',
+  width: '100%',
+  maxWidth: 340,
   padding: '10px 12px',
+  border: '1px solid rgba(15, 35, 57, 0.14)',
+  borderRadius: 8,
   background: 'rgba(255, 255, 255, 0.96)',
+  color: '#102a43',
+  boxShadow: '0 2px 10px rgba(15, 35, 57, 0.12)',
+  fontSize: 13,
   lineHeight: 1.4,
 };
 
@@ -135,6 +183,17 @@ function pinIcon(building: Building, selected: boolean, inferred: boolean): L.Di
     className: 'campus-map__pin-wrap',
     html: `<span class="${classes.join(' ')}">${escapeHtml(building.code)}</span>`,
     iconSize: undefined,
+    iconAnchor: [0, 0],
+  });
+}
+
+function userIcon(demo: boolean): L.DivIcon {
+  const classes = ['campus-map__user-dot'];
+  if (demo) classes.push('campus-map__user-dot--demo');
+  return L.divIcon({
+    className: 'campus-map__user-marker',
+    html: `<span class="${classes.join(' ')}"></span>`,
+    iconSize: [0, 0],
     iconAnchor: [0, 0],
   });
 }
@@ -163,6 +222,21 @@ function outdoorDirectionsUrl(position: [number, number] | null): string | null 
   return `https://www.google.com/maps/dir/?api=1&destination=${destination}&travelmode=walking`;
 }
 
+type GeoStatus = 'idle' | 'locating' | 'watching' | 'denied' | 'unavailable' | 'timeout' | 'insecure' | 'unsupported';
+
+interface UserFix {
+  lat: number;
+  lng: number;
+  /** Reported accuracy radius in metres. */
+  accuracy: number;
+}
+
+interface RouteOrigin {
+  point: LatLng;
+  kind: 'gps' | 'demo';
+  accuracy: number | null;
+}
+
 type MapRefs = {
   map: L.Map;
   markers: Map<string, L.Marker>;
@@ -170,9 +244,14 @@ type MapRefs = {
   footprintBuildingIds: Map<string, string[]>;
 };
 
+function distanceToNearestCampus(point: LatLng): number {
+  return Math.min(...CAMPUS_CENTRES.map((centre) => haversineMetres(centre, point)));
+}
+
 /**
  * Local-first campus map: OpenStreetMap raster tiles, OSM building footprints bundled
- * from src/data/campus-buildings.geojson, and a labelled capsule pin per building.
+ * from src/data/campus-buildings.geojson, a labelled capsule pin per building, and
+ * on-device walking routes over the OSM path network in src/data/campus-paths.geojson.
  * No API key required.
  */
 export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuilding }: CampusMapProps) {
@@ -181,6 +260,22 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
   const onSelectBuildingRef = useRef(onSelectBuilding);
   const selectedIdRef = useRef<string | null>(selectedBuilding?.id ?? null);
   const [tileStatus, setTileStatus] = useState<'loading' | 'ready' | 'error'>('loading');
+  // Bumped whenever the Leaflet map is (re)created so layer effects re-attach.
+  const [mapVersion, setMapVersion] = useState(0);
+
+  // Geolocation state.
+  const [geoStatus, setGeoStatus] = useState<GeoStatus>('idle');
+  const [fix, setFix] = useState<UserFix | null>(null);
+  const [useDemoStart, setUseDemoStart] = useState(false);
+  const watchIdRef = useRef<number | null>(null);
+  const lastAppliedRef = useRef<{ fix: UserFix; at: number } | null>(null);
+  const pendingFixRef = useRef<UserFix | null>(null);
+  const pendingTimerRef = useRef<number | null>(null);
+
+  // Route layers.
+  const routeLayerRef = useRef<L.LayerGroup | null>(null);
+  const userLayerRef = useRef<L.LayerGroup | null>(null);
+  const fittedRouteForRef = useRef<string | null>(null);
 
   useEffect(() => {
     onSelectBuildingRef.current = onSelectBuilding;
@@ -188,6 +283,7 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
 
   const matches = useMemo(() => matchFootprints(buildings, campusCollection), [buildings]);
   const matchById = useMemo(() => new Map(matches.map((m) => [m.building.id, m])), [matches]);
+  const graph = useMemo(() => getPathGraph(), []);
 
   const stats = useMemo(() => {
     const footprints = campusCollection.features.filter((f) => f.properties.kind === 'building').length;
@@ -296,6 +392,10 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
     }
 
     refs.current = { map, markers, footprintLayers, footprintBuildingIds };
+    routeLayerRef.current = null;
+    userLayerRef.current = null;
+    fittedRouteForRef.current = null;
+    setMapVersion((v) => v + 1);
 
     // Leaflet measures the container on creation; make sure it has the final size.
     const resize = () => map.invalidateSize();
@@ -347,19 +447,223 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
     if (bounds.isValid()) {
       map.flyToBounds(bounds, { ...flightOptions(), maxZoom: BUILDING_ZOOM, padding: [48, 48] });
     }
-  }, [selectedBuilding, matchById]);
+  }, [selectedBuilding, matchById, mapVersion]);
+
+  // ---------- geolocation ----------
+
+  const clearPendingFix = useCallback(() => {
+    if (pendingTimerRef.current !== null) {
+      window.clearTimeout(pendingTimerRef.current);
+      pendingTimerRef.current = null;
+    }
+    pendingFixRef.current = null;
+  }, []);
+
+  const stopWatching = useCallback(() => {
+    if (watchIdRef.current !== null && typeof navigator !== 'undefined' && navigator.geolocation) {
+      navigator.geolocation.clearWatch(watchIdRef.current);
+    }
+    watchIdRef.current = null;
+    clearPendingFix();
+    lastAppliedRef.current = null;
+  }, [clearPendingFix]);
+
+  const applyFix = useCallback((candidate: UserFix) => {
+    lastAppliedRef.current = { fix: candidate, at: Date.now() };
+    setFix(candidate);
+    setGeoStatus('watching');
+  }, []);
+
+  /** Coalesces jittery updates: ignore moves under 10 m, and apply at most one update per 2 s. */
+  const handlePosition = useCallback(
+    (position: GeolocationPosition) => {
+      const candidate: UserFix = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+        accuracy: position.coords.accuracy,
+      };
+      const last = lastAppliedRef.current;
+      if (!last) {
+        applyFix(candidate);
+        return;
+      }
+      const moved = haversineMetres([last.fix.lat, last.fix.lng], [candidate.lat, candidate.lng]);
+      const accuracyImproved = candidate.accuracy < last.fix.accuracy * 0.5;
+      if (moved < MIN_MOVE_METRES && !accuracyImproved) return;
+      const elapsed = Date.now() - last.at;
+      if (elapsed >= MIN_UPDATE_INTERVAL_MS) {
+        clearPendingFix();
+        applyFix(candidate);
+        return;
+      }
+      pendingFixRef.current = candidate;
+      if (pendingTimerRef.current === null) {
+        pendingTimerRef.current = window.setTimeout(() => {
+          pendingTimerRef.current = null;
+          const pending = pendingFixRef.current;
+          pendingFixRef.current = null;
+          if (pending) applyFix(pending);
+        }, MIN_UPDATE_INTERVAL_MS - elapsed);
+      }
+    },
+    [applyFix, clearPendingFix],
+  );
+
+  const handlePositionError = useCallback(
+    (error: GeolocationPositionError) => {
+      if (error.code === error.PERMISSION_DENIED) {
+        stopWatching();
+        setFix(null);
+        setGeoStatus('denied');
+      } else if (error.code === error.POSITION_UNAVAILABLE) {
+        setGeoStatus('unavailable');
+      } else {
+        // Timeout: keep watching; a later fix may still arrive.
+        setGeoStatus((status) => (status === 'watching' ? status : 'timeout'));
+      }
+    },
+    [stopWatching],
+  );
+
+  const startWatching = useCallback(() => {
+    if (typeof navigator === 'undefined' || !('geolocation' in navigator) || !navigator.geolocation) {
+      setGeoStatus('unsupported');
+      return;
+    }
+    if (typeof window !== 'undefined' && window.isSecureContext === false) {
+      setGeoStatus('insecure');
+      return;
+    }
+    stopWatching();
+    setGeoStatus('locating');
+    watchIdRef.current = navigator.geolocation.watchPosition(handlePosition, handlePositionError, {
+      enableHighAccuracy: true,
+      maximumAge: 5000,
+      timeout: 20000,
+    });
+  }, [handlePosition, handlePositionError, stopWatching]);
+
+  const toggleLocation = () => {
+    if (geoStatus === 'locating' || geoStatus === 'watching' || geoStatus === 'timeout') {
+      stopWatching();
+      setFix(null);
+      setGeoStatus('idle');
+    } else {
+      startWatching();
+    }
+  };
+
+  // Stop watching on unmount.
+  useEffect(() => () => stopWatching(), [stopWatching]);
+
+  const watching = geoStatus === 'locating' || geoStatus === 'watching' || geoStatus === 'timeout';
+  const farFromCampus = fix ? distanceToNearestCampus([fix.lat, fix.lng]) : null;
+  const fixIsFar = farFromCampus !== null && farFromCampus > FAR_FROM_CAMPUS_METRES;
+  const locationUnusable =
+    fixIsFar || ['denied', 'unavailable', 'insecure', 'unsupported'].includes(geoStatus) || (geoStatus === 'timeout' && !fix);
+
+  const origin: RouteOrigin | null = useMemo(() => {
+    if (useDemoStart) return { point: GLASNEVIN_MAIN_ENTRANCE, kind: 'demo', accuracy: null };
+    if (fix && !fixIsFar) return { point: [fix.lat, fix.lng], kind: 'gps', accuracy: fix.accuracy };
+    return null;
+  }, [useDemoStart, fix, fixIsFar]);
+
+  // ---------- routing ----------
+
+  const selectedMatch = selectedBuilding ? matchById.get(selectedBuilding.id) ?? null : null;
+  const directionsUrl = selectedMatch ? outdoorDirectionsUrl(selectedMatch.position) : null;
+
+  const originLat = origin?.point[0] ?? null;
+  const originLng = origin?.point[1] ?? null;
+  const route: RouteResult | null = useMemo(() => {
+    if (originLat === null || originLng === null || !selectedMatch) return null;
+    return routeToBuilding(graph, [originLat, originLng], selectedMatch);
+  }, [graph, originLat, originLng, selectedMatch]);
+
+  // User marker + accuracy circle.
+  useEffect(() => {
+    const current = refs.current;
+    if (!current) return;
+    userLayerRef.current?.remove();
+    userLayerRef.current = null;
+    if (!origin) return;
+    const layers: L.Layer[] = [];
+    if (origin.kind === 'gps' && origin.accuracy !== null && Number.isFinite(origin.accuracy)) {
+      layers.push(L.circle(origin.point, { ...ACCURACY_STYLE, radius: Math.max(origin.accuracy, 5) }));
+    }
+    layers.push(
+      L.marker(origin.point, {
+        icon: userIcon(origin.kind === 'demo'),
+        title: origin.kind === 'demo' ? 'Demo start: Glasnevin main entrance (approximate)' : 'Your location',
+        alt: origin.kind === 'demo' ? 'Demo start point' : 'Your location',
+        interactive: false,
+        keyboard: false,
+        zIndexOffset: 2000,
+      }),
+    );
+    userLayerRef.current = L.layerGroup(layers).addTo(current.map);
+  }, [origin, mapVersion]);
+
+  // Route polyline; fit the view to it the first time a route is drawn for a destination.
+  useEffect(() => {
+    const current = refs.current;
+    if (!current) return;
+    routeLayerRef.current?.remove();
+    routeLayerRef.current = null;
+    if (!route || !selectedBuilding) {
+      fittedRouteForRef.current = null;
+      return;
+    }
+    const casing = L.polyline(route.coordinates, ROUTE_CASING_STYLE);
+    const line = L.polyline(route.coordinates, ROUTE_STYLE);
+    routeLayerRef.current = L.layerGroup([casing, line]).addTo(current.map);
+    if (fittedRouteForRef.current !== selectedBuilding.id) {
+      fittedRouteForRef.current = selectedBuilding.id;
+      current.map.flyToBounds(line.getBounds(), { ...flightOptions(), padding: [56, 56], maxZoom: BUILDING_ZOOM });
+    }
+  }, [route, selectedBuilding, mapVersion]);
 
   const returnToOverview = () => {
     refs.current?.map.flyTo(GLASNEVIN_CENTER, GLASNEVIN_ZOOM, flightOptions());
   };
 
-  const selectedMatch = selectedBuilding ? matchById.get(selectedBuilding.id) ?? null : null;
-  const directionsUrl = selectedMatch ? outdoorDirectionsUrl(selectedMatch.position) : null;
-
   const statusMessage =
     tileStatus === 'error'
       ? 'OpenStreetMap tiles could not load (offline?). Building footprints and pins are still shown from local data.'
-      : `OpenStreetMap map — ${stats.footprints} OSM footprints, ${stats.matched}/${stats.total} buildings matched, ${stats.pinned} pinned.`;
+      : `OpenStreetMap map — ${stats.footprints} OSM footprints, ${stats.matched}/${stats.total} buildings matched, ${stats.pinned} pinned, ${graph.stats.ways} paths for routing.`;
+
+  const originLabel = origin?.kind === 'demo' ? 'the Glasnevin main entrance (demo start)' : 'your location';
+
+  const geoNotice = (() => {
+    switch (geoStatus) {
+      case 'locating':
+        return { tone: '', text: 'Finding your location…' };
+      case 'watching':
+        if (fix && fixIsFar) {
+          return {
+            tone: 'warn',
+            text: `Your location is about ${(farFromCampus! / 1000).toFixed(1)} km from the nearest DCU campus, so no campus route can start from it.`,
+          };
+        }
+        return { tone: '', text: `Location found (±${Math.round(fix?.accuracy ?? 0)} m). Updating as you move.` };
+      case 'timeout':
+        return fix
+          ? { tone: '', text: `Using your last location (±${Math.round(fix.accuracy)} m); waiting for a newer fix.` }
+          : { tone: 'warn', text: 'Still waiting for a location fix. Check that location services are on.' };
+      case 'denied':
+        return { tone: 'error', text: 'Location permission was denied. Allow location access for this site to route from where you are.' };
+      case 'unavailable':
+        return { tone: 'error', text: 'Your device could not determine a position right now.' };
+      case 'insecure':
+        return { tone: 'error', text: 'Location only works on a secure (https or localhost) page; this page is not one.' };
+      case 'unsupported':
+        return { tone: 'error', text: 'This browser does not support geolocation.' };
+      default:
+        return null;
+    }
+  })();
+
+  const showDemoToggle = locationUnusable || useDemoStart;
 
   return (
     <section
@@ -385,43 +689,102 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
         </span>
       </div>
 
-      <button
-        className="campus-map__overview-control"
-        style={controlStyle}
-        type="button"
-        onClick={returnToOverview}
-        aria-label="Return to the DCU Glasnevin overview"
-      >
-        Campus overview
-      </button>
+      <div className="campus-map__stack">
+        <div className="campus-map__controls">
+          <button
+            className="campus-map__overview-control campus-map__control"
+            type="button"
+            onClick={returnToOverview}
+            aria-label="Return to the DCU Glasnevin overview"
+          >
+            Campus overview
+          </button>
+          <button
+            className={`campus-map__locate-control campus-map__control${watching ? ' campus-map__control--active' : ''}`}
+            type="button"
+            onClick={toggleLocation}
+            aria-pressed={watching}
+            aria-label={watching ? 'Stop using my location' : 'Use my location to draw a walking route'}
+          >
+            {watching ? 'Stop sharing location' : 'Use my location'}
+          </button>
+        </div>
 
-      {selectedBuilding && selectedMatch && (
-        <aside className="campus-map__selection" style={selectionStyle} aria-live="polite">
-          <strong>
-            {selectedBuilding.code} · {selectedBuilding.name}
-          </strong>
-          <div>Campus: {CAMPUS_LABELS[selectedBuilding.campus]}.</div>
-          <div>Pin precision: {pinPrecisionLabel(selectedMatch)}.</div>
-          <div>
-            {selectedMatch.features.length > 0
-              ? `Footprint: ${selectedMatch.features.length} OSM ${selectedMatch.features.length === 1 ? 'polygon' : 'polygons'} (matched by ${selectedMatch.method}).`
-              : 'No OSM footprint matched for this building.'}
+        {(geoNotice || showDemoToggle) && (
+          <div
+            className={`campus-map__notice${geoNotice?.tone ? ` campus-map__notice--${geoNotice.tone}` : ''}`}
+            role={geoNotice?.tone === 'error' ? 'alert' : 'status'}
+            aria-live="polite"
+          >
+            {geoNotice && <div>{geoNotice.text}</div>}
+            {showDemoToggle && (
+              <label>
+                <input
+                  type="checkbox"
+                  checked={useDemoStart}
+                  onChange={(event) => setUseDemoStart(event.target.checked)}
+                />
+                <span>Demo from the Glasnevin main entrance (Collins Avenue, approximate) instead of my real location.</span>
+              </label>
+            )}
           </div>
-          {!selectedMatch.position && <div>No coordinate available — this building is not pinned on the map.</div>}
-          <div>Outdoor location only — this map does not provide indoor routing.</div>
-          {directionsUrl && (
-            <a
-              href={directionsUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="campus-map__directions-link"
-              style={{ color: '#0b4fa3', fontWeight: 700 }}
-            >
-              Open outdoor walking directions
-            </a>
-          )}
-        </aside>
-      )}
+        )}
+
+        {selectedBuilding && selectedMatch && (
+          <aside className="campus-map__selection" style={selectionStyle} aria-live="polite">
+            <strong>
+              {selectedBuilding.code} · {selectedBuilding.name}
+            </strong>
+            <div>Campus: {CAMPUS_LABELS[selectedBuilding.campus]}.</div>
+            <div>Pin precision: {pinPrecisionLabel(selectedMatch)}.</div>
+            <div>
+              {selectedMatch.features.length > 0
+                ? `Footprint: ${selectedMatch.features.length} OSM ${selectedMatch.features.length === 1 ? 'polygon' : 'polygons'} (matched by ${selectedMatch.method}).`
+                : 'No OSM footprint matched for this building.'}
+            </div>
+            {!selectedMatch.position && <div>No coordinate available — this building is not pinned on the map.</div>}
+            <div>Outdoor location only — this map does not provide indoor routing.</div>
+
+            <div className="campus-map__route">
+              {route ? (
+                <>
+                  <div>
+                    <strong>
+                      Walking route: {formatDistance(route.distanceMetres)} · {formatMinutes(route.walkingMinutes)}
+                    </strong>{' '}
+                    from {originLabel}.
+                  </div>
+                  <div className="campus-map__route-note">
+                    Outdoor route over OpenStreetMap paths at {WALKING_SPEED_MPS} m/s; it ends at the building footprint, not
+                    at an entrance.
+                  </div>
+                </>
+              ) : origin ? (
+                <div>
+                  No walking route found over the mapped OpenStreetMap paths from {originLabel}
+                  {selectedMatch.position || selectedMatch.features.length > 0 ? '.' : ' — this building has no position.'}
+                </div>
+              ) : (
+                <div className="campus-map__route-note">
+                  Choose “Use my location” to draw a walking route to this building over OpenStreetMap paths.
+                </div>
+              )}
+            </div>
+
+            {directionsUrl && (
+              <a
+                href={directionsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="campus-map__directions-link"
+                style={{ color: '#0b4fa3', fontWeight: 700 }}
+              >
+                Open outdoor walking directions
+              </a>
+            )}
+          </aside>
+        )}
+      </div>
     </section>
   );
 }
