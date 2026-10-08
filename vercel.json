@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build:site",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/api/timetable/:path*",
+      "destination": "https://timetable.redbrick.dcu.ie/api/v3/timetable/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,8 @@
   "packageManager": "npm@11.9.0",
   "scripts": {
     "dev": "vite --configLoader native",
-    "build": "tsc --noEmit && vite build --configLoader native",
+    "build": "tsc --noEmit && node build-deploy.mjs",
+    "build:site": "tsc --noEmit && vite build --configLoader native --base /app/ --outDir dist/app && node scripts/assemble-site.mjs",
     "check": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "scrape": "node scripts/scrape-rooms.mjs"

@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   const publicValue = (name) => JSON.stringify(process.env[name] || env[name] || '');
   return {
+    base: '/app/',
     plugins: [react()],
     define: {
       'import.meta.env.VITE_MANUS_API_URL': publicValue('MANUS_API_URL'),
@@ -29,6 +30,6 @@ export default defineConfig(({ mode }) => {
     },
     server: { proxy: timetableProxy },
     preview: { proxy: timetableProxy },
-    build: { outDir: 'dist', sourcemap: false },
+    build: { outDir: 'dist/app', sourcemap: false },
   };
 });
