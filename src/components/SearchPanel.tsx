@@ -71,33 +71,34 @@ export default function SearchPanel({ buildings, rooms, onSelect, selected }: Se
 
   return (
     <section className="search-panel" aria-label="Search rooms and buildings">
-      <form className="search-form" onSubmit={submitSearch}>
-        <label htmlFor="room-search">Room or building</label>
+      <form className="search-form" onSubmit={submitSearch} role="search">
+        <label htmlFor="room-search" className="visually-hidden">Room or building</label>
         <div className="search-input-wrap">
-          <Search size={17} aria-hidden="true" />
+          <Search size={18} aria-hidden="true" />
           <input
             id="room-search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Room code, e.g. L101"
+            onKeyDown={(event) => {
+              if (event.key === 'Escape') setQuery('');
+            }}
+            placeholder="Search a room or building…"
             autoComplete="off"
             spellCheck="false"
-            aria-describedby="search-help"
+            autoFocus
           />
           {query && (
-            <button className="clear-search" type="button" onClick={() => setQuery('')} aria-label="Clear room or building search">
+            <button className="clear-search" type="button" onClick={() => setQuery('')} aria-label="Clear search">
               <X size={15} aria-hidden="true" />
             </button>
           )}
-          <button className="primary-search" type="submit" disabled={!trimmedQuery}>Find</button>
         </div>
-        <p id="search-help" className="search-help">Type a room code or building name. Enter decodes the code.</p>
       </form>
 
       {!trimmedQuery && (
         <>
           <div className="search-empty-state">
-            <p>Start with a room code from your timetable.</p>
+            <p>Type a room code like <code>L101</code> or a building name. Press Enter to decode a code that isn't listed.</p>
             <button type="button" className="example-code" onClick={useExample}>
               Try <code>L101</code><ChevronRight size={14} aria-hidden="true" />
             </button>

@@ -31,10 +31,19 @@ export interface RoomResolution {
   roomNumber: string | null;
   message: string;
 }
+export interface RouteSummary {
+  distanceMetres: number;
+  walkingMinutes: number;
+  origin: 'gps' | 'demo';
+}
 export interface CampusMapProps {
   buildings: Building[];
   selectedBuilding: Building | null;
   onSelectBuilding: (building: Building) => void;
+  /** Floor of the selected room, if any; colours the selected footprint and pin. */
+  selectedFloor?: string | null;
+  /** Called whenever the walking route to the selected building changes (null when none). */
+  onRouteChange?: (route: RouteSummary | null) => void;
 }
 export interface SearchPanelProps {
   buildings: Building[];

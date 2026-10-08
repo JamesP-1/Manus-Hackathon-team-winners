@@ -1,77 +1,56 @@
-/* Routing + geolocation UI for OsmCampusMap. Overlays are a flow-layout column
-   under the status box so the controls row, location notices and selection card
-   never overlap. The column follows styles.css: right edge on desktop, left on mobile. */
+/* Map overlays for OsmCampusMap: a compact control cluster, optional notices and a
+   route pill. The stack sits top-right on desktop (the floating panel owns top-left)
+   and top-left on phones, where the panel becomes a bottom sheet. */
 .campus-map__stack {
-  position: absolute;
-  z-index: 1000;
-  top: 58px;
-  left: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  max-width: min(360px, calc(100% - 24px));
-  max-height: calc(100% - 70px);
-  pointer-events: none;
+  position: absolute; z-index: 1000; top: 14px; right: 14px;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+  max-width: min(320px, calc(100% - 28px)); pointer-events: none;
 }
 .campus-map__stack > * { pointer-events: auto; }
-@media (min-width: 721px) {
-  .campus-map__stack { left: auto; right: 12px; align-items: flex-end; }
-}
 
-.campus-map__controls { display: flex; flex-wrap: wrap; gap: 8px; }
-@media (min-width: 721px) {
-  .campus-map__controls { justify-content: flex-end; }
-}
-
+.campus-map__controls { display: flex; gap: 6px; padding: 4px; border-radius: 999px; background: rgba(255, 255, 255, .96); box-shadow: 0 4px 16px rgba(15, 31, 61, .18); backdrop-filter: blur(6px); }
 .campus-map__control {
-  min-height: 36px;
-  padding: 8px 11px;
-  border: 1px solid #0b63ce;
-  border-radius: 7px;
-  background: #ffffff;
-  color: #0b4fa3;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.35;
-  cursor: pointer;
-  box-shadow: 0 2px 10px rgba(15, 35, 57, 0.12);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 12px 0 10px;
+  border: 0; border-radius: 999px; background: transparent; color: var(--ink); font-size: 13px; font-weight: 600;
 }
-.campus-map__control--active { background: #0b4fa3; color: #fff; }
-.campus-map__control:disabled { cursor: not-allowed; opacity: 0.6; }
+.campus-map__control:hover { background: var(--surface); }
+.campus-map__control--active { background: var(--blue); color: #fff; }
+.campus-map__control--active:hover { background: var(--blue-dark); }
 
 .campus-map__notice {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid rgba(15, 35, 57, 0.14);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.94);
-  color: #102a43;
-  font-size: 13px;
-  line-height: 1.35;
-  box-shadow: 0 2px 10px rgba(15, 35, 57, 0.12);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; padding: 8px 12px;
+  border-radius: 10px; background: rgba(255, 255, 255, .96); color: var(--ink);
+  font-size: 12px; line-height: 1.35; box-shadow: 0 4px 16px rgba(15, 31, 61, .14);
 }
-.campus-map__notice--warn { border-color: #8a5a00; background: #fff3d6; }
-.campus-map__notice--error { border-color: #b42318; background: #fde8e6; }
-.campus-map__notice label { display: flex; gap: 8px; align-items: flex-start; margin-top: 6px; cursor: pointer; }
-.campus-map__notice input[type='checkbox'] { margin: 2px 0 0; width: 18px; height: 18px; flex: none; }
+.campus-map__notice--warn { background: var(--amber-bg); color: var(--amber); }
+.campus-map__notice--error { background: #fdecec; color: #8a1c1c; }
+.campus-map__toggle { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-weight: 600; color: var(--ink); }
+.campus-map__toggle input { width: 15px; height: 15px; margin: 0; accent-color: var(--blue); }
 
-.campus-map__route {
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px solid rgba(15, 35, 57, 0.14);
+.campus-map__route-pill {
+  /* centred in the map area that the 372px floating panel (+16px gutter) leaves visible */
+  position: absolute; z-index: 1000; left: calc(50% + 194px); bottom: 18px; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px 8px 12px;
+  border-radius: 999px; background: var(--ink); color: #fff; font-size: 13px; white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(15, 31, 61, .3); max-width: calc(100% - 28px);
 }
-.campus-map__route strong { color: #0b4fa3; }
-.campus-map__route-note { font-size: 12px; color: #55627a; }
+.campus-map__route-pill svg { color: var(--accent, var(--blue)); flex: none; }
+.campus-map__route-pill strong { font-weight: 700; }
+.campus-map__route-sep { opacity: .5; }
+.campus-map__route-pill small { font-size: 12px; opacity: .75; overflow: hidden; text-overflow: ellipsis; }
 
 .campus-map__user-marker { background: transparent; border: 0; }
 .campus-map__user-dot {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  width: 16px; height: 16px; border-radius: 50%;
-  background: #1663ef; border: 3px solid #fff;
-  box-shadow: 0 0 0 2px rgba(22, 99, 239, 0.45), 0 2px 6px rgba(11, 27, 58, 0.35);
+  width: 16px; height: 16px; border-radius: 50%; background: var(--blue); border: 3px solid #fff;
+  box-shadow: 0 0 0 2px rgba(22, 99, 239, .45), 0 2px 6px rgba(11, 27, 58, .35);
 }
-.campus-map__user-dot--demo { background: #8a5a00; box-shadow: 0 0 0 2px rgba(138, 90, 0, 0.45); }
+.campus-map__user-dot--demo { background: var(--amber); box-shadow: 0 0 0 2px rgba(138, 90, 0, .45); }
+
+@media (max-width: 720px) {
+  .campus-map__stack { left: 14px; right: auto; align-items: flex-start; }
+  .campus-map__control span { display: none; }
+  .campus-map__control { padding: 0 10px; }
+  /* keep the pill above the bottom-sheet panel */
+  .campus-map__route-pill { bottom: auto; top: 62px; left: 14px; transform: none; }
+}

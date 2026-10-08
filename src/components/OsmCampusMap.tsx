@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { AlertTriangle, Compass, Footprints, LocateFixed } from 'lucide-react';
 import './routing.css';
 import type { Building, CampusMapProps } from '../types';
+import { BUILDING_COLOR, floorStyle } from '../lib/floors';
 import campusGeoJsonText from '../data/campus-buildings.geojson?raw';
 import pathsGeoJsonText from '../data/campus-paths.geojson?raw';
 import {
@@ -18,7 +20,6 @@ import {
   formatMinutes,
   haversineMetres,
   routeToBuilding,
-  WALKING_SPEED_MPS,
   type LatLng,
   type PathFeatureCollection,
   type PathGraph,
@@ -34,7 +35,6 @@ function getPathGraph(): PathGraph {
   return pathGraphCache;
 }
 
-const OSM_COPYRIGHT_URL = 'https://www.openstreetmap.org/copyright';
 const TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 const TILE_ATTRIBUTION =
   '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors';
@@ -81,12 +81,10 @@ const MATCHED_STYLE: L.PathOptions = {
   fillColor: '#1663ef',
   fillOpacity: 0.28,
 };
-const SELECTED_STYLE: L.PathOptions = {
-  color: '#0b1b3a',
-  weight: 3,
-  fillColor: '#1663ef',
-  fillOpacity: 0.5,
-};
+// The selected footprint takes the selected floor's colour (see src/lib/floors.ts).
+function selectedStyleFor(accent: string): L.PathOptions {
+  return { color: '#0f1f3d', weight: 3, fillColor: accent, fillOpacity: 0.55 };
+}
 const CAMPUS_STYLE: L.PathOptions = {
   color: '#1663ef',
   weight: 2,
@@ -136,37 +134,6 @@ const hostStyle: CSSProperties = {
   height: '100%',
 };
 
-// The status box is positioned top-left inline; styles.css moves it to the right edge on desktop.
-// Everything else lives in the .campus-map__stack column (routing.css) below it.
-const statusStyle: CSSProperties = {
-  position: 'absolute',
-  zIndex: 1000,
-  left: 12,
-  top: 12,
-  maxWidth: 'min(360px, calc(100% - 24px))',
-  padding: '8px 10px',
-  border: '1px solid rgba(15, 35, 57, 0.14)',
-  borderRadius: 8,
-  background: 'rgba(255, 255, 255, 0.94)',
-  color: '#102a43',
-  boxShadow: '0 2px 10px rgba(15, 35, 57, 0.12)',
-  fontSize: 13,
-  lineHeight: 1.35,
-};
-
-const selectionStyle: CSSProperties = {
-  width: '100%',
-  maxWidth: 340,
-  padding: '10px 12px',
-  border: '1px solid rgba(15, 35, 57, 0.14)',
-  borderRadius: 8,
-  background: 'rgba(255, 255, 255, 0.96)',
-  color: '#102a43',
-  boxShadow: '0 2px 10px rgba(15, 35, 57, 0.12)',
-  fontSize: 13,
-  lineHeight: 1.4,
-};
-
 function prefersReducedMotion(): boolean {
   return typeof window !== 'undefined' && Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
 }
@@ -175,13 +142,13 @@ function flightOptions(): L.ZoomPanOptions {
   return prefersReducedMotion() ? { animate: false } : { animate: true, duration: 1 };
 }
 
-function pinIcon(building: Building, selected: boolean, inferred: boolean): L.DivIcon {
+function pinIcon(building: Building, selected: boolean, inferred: boolean, accent: string): L.DivIcon {
   const classes = ['campus-map__pin'];
   if (selected) classes.push('campus-map__pin--selected');
   if (inferred) classes.push('campus-map__pin--inferred');
   return L.divIcon({
     className: 'campus-map__pin-wrap',
-    html: `<span class="${classes.join(' ')}">${escapeHtml(building.code)}</span>`,
+    html: `<span class="${classes.join(' ')}" style="--pin-color:${accent}">${escapeHtml(building.code)}</span>`,
     iconSize: undefined,
     iconAnchor: [0, 0],
   });
@@ -204,7 +171,7 @@ function escapeHtml(value: string): string {
 
 function pinPrecisionLabel(match: FootprintMatch): string {
   if (match.positionSource === 'osm-footprint') {
-    return 'OpenStreetMap footprint centre (no sourced coordinate in buildings.json)';
+    return 'OpenStreetMap footprint centre';
   }
   switch (match.building.coordinatePrecision) {
     case 'building':
@@ -214,12 +181,6 @@ function pinPrecisionLabel(match: FootprintMatch): string {
     default:
       return 'Coordinate precision has not been verified';
   }
-}
-
-function outdoorDirectionsUrl(position: [number, number] | null): string | null {
-  if (!position) return null;
-  const destination = encodeURIComponent(`${position[0]},${position[1]}`);
-  return `https://www.google.com/maps/dir/?api=1&destination=${destination}&travelmode=walking`;
 }
 
 type GeoStatus = 'idle' | 'locating' | 'watching' | 'denied' | 'unavailable' | 'timeout' | 'insecure' | 'unsupported';
@@ -254,8 +215,15 @@ function distanceToNearestCampus(point: LatLng): number {
  * on-device walking routes over the OSM path network in src/data/campus-paths.geojson.
  * No API key required.
  */
-export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuilding }: CampusMapProps) {
+export default function OsmCampusMap({
+  buildings,
+  selectedBuilding,
+  onSelectBuilding,
+  selectedFloor = null,
+  onRouteChange,
+}: CampusMapProps) {
   const hostRef = useRef<HTMLDivElement | null>(null);
+  const accent = selectedFloor ? floorStyle(selectedFloor).color : BUILDING_COLOR;
   const refs = useRef<MapRefs | null>(null);
   const onSelectBuildingRef = useRef(onSelectBuilding);
   const selectedIdRef = useRef<string | null>(selectedBuilding?.id ?? null);
@@ -376,7 +344,7 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
       if (!match.position) continue;
       const { building } = match;
       const marker = L.marker(match.position, {
-        icon: pinIcon(building, building.id === selectedIdRef.current, match.positionSource === 'osm-footprint'),
+        icon: pinIcon(building, building.id === selectedIdRef.current, match.positionSource === 'osm-footprint', BUILDING_COLOR),
         title: `${building.name} (${building.code}, ${CAMPUS_LABELS[building.campus]})`,
         alt: `${building.code} ${building.name}`,
         keyboard: true,
@@ -422,14 +390,15 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
       const match = matchById.get(id);
       if (!match) continue;
       const selected = id === selectedBuilding?.id;
-      marker.setIcon(pinIcon(match.building, selected, match.positionSource === 'osm-footprint'));
+      marker.setIcon(pinIcon(match.building, selected, match.positionSource === 'osm-footprint', accent));
       marker.setZIndexOffset(selected ? 1000 : 0);
     }
 
+    const selectedStyle = selectedStyleFor(accent);
     for (const [key, layer] of footprintLayers) {
       const owners = footprintBuildingIds.get(key) ?? [];
       const selected = selectedBuilding !== null && owners.includes(selectedBuilding.id);
-      layer.setStyle(selected ? SELECTED_STYLE : owners.length > 0 ? MATCHED_STYLE : FOOTPRINT_STYLE);
+      layer.setStyle(selected ? selectedStyle : owners.length > 0 ? MATCHED_STYLE : FOOTPRINT_STYLE);
       if (selected) layer.bringToFront();
     }
 
@@ -447,7 +416,7 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
     if (bounds.isValid()) {
       map.flyToBounds(bounds, { ...flightOptions(), maxZoom: BUILDING_ZOOM, padding: [48, 48] });
     }
-  }, [selectedBuilding, matchById, mapVersion]);
+  }, [selectedBuilding, matchById, mapVersion, accent]);
 
   // ---------- geolocation ----------
 
@@ -571,7 +540,6 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
   // ---------- routing ----------
 
   const selectedMatch = selectedBuilding ? matchById.get(selectedBuilding.id) ?? null : null;
-  const directionsUrl = selectedMatch ? outdoorDirectionsUrl(selectedMatch.position) : null;
 
   const originLat = origin?.point[0] ?? null;
   const originLng = origin?.point[1] ?? null;
@@ -615,24 +583,28 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
       return;
     }
     const casing = L.polyline(route.coordinates, ROUTE_CASING_STYLE);
-    const line = L.polyline(route.coordinates, ROUTE_STYLE);
+    const line = L.polyline(route.coordinates, { ...ROUTE_STYLE, color: accent });
     routeLayerRef.current = L.layerGroup([casing, line]).addTo(current.map);
     if (fittedRouteForRef.current !== selectedBuilding.id) {
       fittedRouteForRef.current = selectedBuilding.id;
       current.map.flyToBounds(line.getBounds(), { ...flightOptions(), padding: [56, 56], maxZoom: BUILDING_ZOOM });
     }
-  }, [route, selectedBuilding, mapVersion]);
+  }, [route, selectedBuilding, mapVersion, accent]);
+
+  // Let the side panel show the route summary next to the destination.
+  useEffect(() => {
+    onRouteChange?.(
+      route && origin
+        ? { distanceMetres: route.distanceMetres, walkingMinutes: route.walkingMinutes, origin: origin.kind }
+        : null,
+    );
+  }, [route, origin, onRouteChange]);
 
   const returnToOverview = () => {
     refs.current?.map.flyTo(GLASNEVIN_CENTER, GLASNEVIN_ZOOM, flightOptions());
   };
 
-  const statusMessage =
-    tileStatus === 'error'
-      ? 'OpenStreetMap tiles could not load (offline?). Building footprints and pins are still shown from local data.'
-      : `OpenStreetMap map — ${stats.footprints} OSM footprints, ${stats.matched}/${stats.total} buildings matched, ${stats.pinned} pinned, ${graph.stats.ways} paths for routing.`;
-
-  const originLabel = origin?.kind === 'demo' ? 'the Glasnevin main entrance (demo start)' : 'your location';
+  const originLabel = origin?.kind === 'demo' ? 'the main entrance (demo)' : 'you';
 
   const geoNotice = (() => {
     switch (geoStatus) {
@@ -642,28 +614,28 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
         if (fix && fixIsFar) {
           return {
             tone: 'warn',
-            text: `Your location is about ${(farFromCampus! / 1000).toFixed(1)} km from the nearest DCU campus, so no campus route can start from it.`,
+            text: `You're about ${(farFromCampus! / 1000).toFixed(1)} km from DCU, too far to route from.`,
           };
         }
-        return { tone: '', text: `Location found (±${Math.round(fix?.accuracy ?? 0)} m). Updating as you move.` };
+        return null;
       case 'timeout':
-        return fix
-          ? { tone: '', text: `Using your last location (±${Math.round(fix.accuracy)} m); waiting for a newer fix.` }
-          : { tone: 'warn', text: 'Still waiting for a location fix. Check that location services are on.' };
+        return fix ? null : { tone: 'warn', text: 'Still waiting for a location fix.' };
       case 'denied':
-        return { tone: 'error', text: 'Location permission was denied. Allow location access for this site to route from where you are.' };
+        return { tone: 'error', text: 'Location access was denied for this site.' };
       case 'unavailable':
-        return { tone: 'error', text: 'Your device could not determine a position right now.' };
+        return { tone: 'error', text: 'Your device could not find a position.' };
       case 'insecure':
-        return { tone: 'error', text: 'Location only works on a secure (https or localhost) page; this page is not one.' };
+        return { tone: 'error', text: 'Location needs an https page.' };
       case 'unsupported':
-        return { tone: 'error', text: 'This browser does not support geolocation.' };
+        return { tone: 'error', text: 'This browser has no geolocation.' };
       default:
         return null;
     }
   })();
 
   const showDemoToggle = locationUnusable || useDemoStart;
+  const dataSummary = `${stats.footprints} OSM footprints · ${stats.matched}/${stats.total} buildings matched · ${stats.pinned} pinned · ${graph.stats.ways} paths`;
+  const pinNote = selectedMatch ? pinPrecisionLabel(selectedMatch) : null;
 
   return (
     <section
@@ -673,42 +645,30 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
     >
       <div ref={hostRef} className="campus-map__host campus-map__leaflet" style={hostStyle} aria-label="Campus map" />
 
-      <div
-        className={`campus-map__status campus-map__status--${tileStatus}`}
-        style={statusStyle}
-        role={tileStatus === 'error' ? 'alert' : 'status'}
-        aria-live="polite"
-      >
-        <strong>{statusMessage}</strong>{' '}
-        <span className="campus-map__attribution">
-          Data{' '}
-          <a href={OSM_COPYRIGHT_URL} target="_blank" rel="noreferrer">
-            © OpenStreetMap contributors
-          </a>{' '}
-          (ODbL). No API key needed.
-        </span>
-      </div>
-
       <div className="campus-map__stack">
-        <div className="campus-map__controls">
-          <button
-            className="campus-map__overview-control campus-map__control"
-            type="button"
-            onClick={returnToOverview}
-            aria-label="Return to the DCU Glasnevin overview"
-          >
-            Campus overview
+        <div className="campus-map__controls" role="group" aria-label="Map controls" title={dataSummary}>
+          <button className="campus-map__control" type="button" onClick={returnToOverview} aria-label="Return to the campus overview">
+            <Compass size={16} aria-hidden="true" />
+            <span>Overview</span>
           </button>
           <button
-            className={`campus-map__locate-control campus-map__control${watching ? ' campus-map__control--active' : ''}`}
+            className={`campus-map__control${watching ? ' campus-map__control--active' : ''}`}
             type="button"
             onClick={toggleLocation}
             aria-pressed={watching}
             aria-label={watching ? 'Stop using my location' : 'Use my location to draw a walking route'}
           >
-            {watching ? 'Stop sharing location' : 'Use my location'}
+            <LocateFixed size={16} aria-hidden="true" />
+            <span>{watching ? 'Locating' : 'My location'}</span>
           </button>
         </div>
+
+        {tileStatus === 'error' && (
+          <div className="campus-map__notice campus-map__notice--warn" role="alert">
+            <AlertTriangle size={14} aria-hidden="true" />
+            <span>Map tiles could not load. Buildings and routes still work from local data.</span>
+          </div>
+        )}
 
         {(geoNotice || showDemoToggle) && (
           <div
@@ -716,75 +676,32 @@ export default function OsmCampusMap({ buildings, selectedBuilding, onSelectBuil
             role={geoNotice?.tone === 'error' ? 'alert' : 'status'}
             aria-live="polite"
           >
-            {geoNotice && <div>{geoNotice.text}</div>}
+            {geoNotice && <span>{geoNotice.text}</span>}
             {showDemoToggle && (
-              <label>
-                <input
-                  type="checkbox"
-                  checked={useDemoStart}
-                  onChange={(event) => setUseDemoStart(event.target.checked)}
-                />
-                <span>Demo from the Glasnevin main entrance (Collins Avenue, approximate) instead of my real location.</span>
+              <label className="campus-map__toggle">
+                <input type="checkbox" checked={useDemoStart} onChange={(event) => setUseDemoStart(event.target.checked)} />
+                <span>Demo from the main entrance</span>
               </label>
             )}
           </div>
         )}
-
-        {selectedBuilding && selectedMatch && (
-          <aside className="campus-map__selection" style={selectionStyle} aria-live="polite">
-            <strong>
-              {selectedBuilding.code} · {selectedBuilding.name}
-            </strong>
-            <div>Campus: {CAMPUS_LABELS[selectedBuilding.campus]}.</div>
-            <div>Pin precision: {pinPrecisionLabel(selectedMatch)}.</div>
-            <div>
-              {selectedMatch.features.length > 0
-                ? `Footprint: ${selectedMatch.features.length} OSM ${selectedMatch.features.length === 1 ? 'polygon' : 'polygons'} (matched by ${selectedMatch.method}).`
-                : 'No OSM footprint matched for this building.'}
-            </div>
-            {!selectedMatch.position && <div>No coordinate available — this building is not pinned on the map.</div>}
-            <div>Outdoor location only — this map does not provide indoor routing.</div>
-
-            <div className="campus-map__route">
-              {route ? (
-                <>
-                  <div>
-                    <strong>
-                      Walking route: {formatDistance(route.distanceMetres)} · {formatMinutes(route.walkingMinutes)}
-                    </strong>{' '}
-                    from {originLabel}.
-                  </div>
-                  <div className="campus-map__route-note">
-                    Outdoor route over OpenStreetMap paths at {WALKING_SPEED_MPS} m/s; it ends at the building footprint, not
-                    at an entrance.
-                  </div>
-                </>
-              ) : origin ? (
-                <div>
-                  No walking route found over the mapped OpenStreetMap paths from {originLabel}
-                  {selectedMatch.position || selectedMatch.features.length > 0 ? '.' : ' — this building has no position.'}
-                </div>
-              ) : (
-                <div className="campus-map__route-note">
-                  Choose “Use my location” to draw a walking route to this building over OpenStreetMap paths.
-                </div>
-              )}
-            </div>
-
-            {directionsUrl && (
-              <a
-                href={directionsUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="campus-map__directions-link"
-                style={{ color: '#0b4fa3', fontWeight: 700 }}
-              >
-                Open outdoor walking directions
-              </a>
-            )}
-          </aside>
-        )}
       </div>
+
+      {selectedBuilding && selectedMatch && origin && (
+        <div className="campus-map__route-pill" style={{ '--accent': accent } as CSSProperties} aria-live="polite">
+          <Footprints size={16} aria-hidden="true" />
+          {route ? (
+            <>
+              <strong>{formatDistance(route.distanceMetres)}</strong>
+              <span className="campus-map__route-sep">·</span>
+              <strong>{formatMinutes(route.walkingMinutes)}</strong>
+              <small>from {originLabel}</small>
+            </>
+          ) : (
+            <small>No mapped path from {originLabel}{pinNote ? ` · ${pinNote}` : ''}</small>
+          )}
+        </div>
+      )}
     </section>
   );
 }
