@@ -1,5 +1,5 @@
 import { useMemo, useState, type CSSProperties } from 'react';
-import { ClipboardList, Footprints, MapPin, Search, X } from 'lucide-react';
+import { ClipboardList, Footprints, MapPin, Moon, Search, Sun, X } from 'lucide-react';
 import CampusMap from './components/CampusMap';
 import FloorChip from './components/FloorChip';
 import SearchPanel from './components/SearchPanel';
@@ -8,6 +8,7 @@ import buildingsData from './data/buildings.json';
 import roomsData from './data/rooms.json';
 import { BUILDING_COLOR, floorStyle } from './lib/floors';
 import { formatDistance, formatMinutes } from './lib/routing';
+import { useTheme } from './lib/theme';
 import type { Building, Room, RoomResolution, RouteSummary } from './types';
 
 const buildings = buildingsData as Building[];
@@ -99,6 +100,7 @@ export default function App() {
   const [tab, setTab] = useState<Tab>('search');
   const [selected, setSelected] = useState<RoomResolution | null>(null);
   const [route, setRoute] = useState<RouteSummary | null>(null);
+  const [theme, toggleTheme] = useTheme();
 
   const selectedBuilding = selected?.building ?? null;
   const counts = useMemo(() => ({ rooms: rooms.length, buildings: buildings.length }), []);
@@ -135,6 +137,15 @@ export default function App() {
             <p className="wordmark">DCU / NAV</p>
             <h1>Find your next room.</h1>
           </div>
+          <button
+            type="button"
+            className="icon-button theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+          >
+            {theme === 'dark' ? <Sun size={17} aria-hidden="true" /> : <Moon size={17} aria-hidden="true" />}
+          </button>
         </header>
 
         <div className="tabs" role="tablist" aria-label="Lookup method">

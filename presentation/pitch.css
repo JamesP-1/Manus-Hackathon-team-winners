@@ -57,6 +57,11 @@ code { font-family: var(--mono); font-size: .92em; font-weight: 700; background:
 .topnav a { color: var(--muted); text-decoration: none; }
 .topnav a:hover { color: var(--ink); }
 .topnav .pill { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); }
+.theme-toggle { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); cursor: pointer; }
+.theme-toggle:hover { border-color: var(--blue); color: var(--blue); }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 @media (max-width: 720px) { .topnav a:not(.pill) { display: none; } }
 
 main { display: flex; flex-direction: column; gap: clamp(72px, 10vw, 128px); padding-block: clamp(40px, 7vw, 96px) 0; padding-inline: clamp(16px, 4vw, 48px); max-width: 1180px; margin: 0 auto; }

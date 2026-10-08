@@ -23,8 +23,39 @@
     <a href="#why">Why it wins</a>
     <a href="#tech">Under the hood</a>
     <a class="pill" href="https://github.com/JamesP-1/Manus-Hackathon-team-winners" target="_blank" rel="noreferrer">Repository</a>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
   </nav>
 </header>
+<script>
+  // Theme: follow the system until the viewer picks one; remember the pick on this device.
+  (function () {
+    var root = document.documentElement;
+    var button = document.getElementById('theme-toggle');
+    function stored() { try { return localStorage.getItem('dcu-nav.theme'); } catch (e) { return null; } }
+    function current() {
+      var pick = root.getAttribute('data-theme');
+      if (pick) return pick;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function apply(theme) {
+      root.setAttribute('data-theme', theme);
+      var dark = theme === 'dark';
+      button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      button.title = dark ? 'Light mode' : 'Dark mode';
+    }
+    var saved = stored();
+    if (saved === 'dark' || saved === 'light') apply(saved);
+    else apply(current());
+    button.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      apply(next);
+      try { localStorage.setItem('dcu-nav.theme', next); } catch (e) { /* private mode */ }
+    });
+  })();
+</script>
 
 <main id="top">
 
