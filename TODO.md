@@ -1,0 +1,8 @@
+# DCU Campus Navigator outcomes
+
+- [ ] Public room inventory: scrape all publicly discoverable DCU room listings and associate each with its building/campus; retain source URLs, deduplicate, provide a rerunnable scraper and state uncovered or inaccessible sources. Never synthesize rooms into the inventory from the naming convention.
+- [ ] Building data and decoding: source current building code/name associations and coordinates with precision labels; decode L101 as building L / first floor / room 01, support verified ground-floor and multi-letter forms, and handle unknown/ambiguous campuses without fabricating answers.
+- [ ] Interactive Google 3D map: render actual Google 3D imagery of DCU using the supported API, selectable building markers and camera fly-to; preserve attribution. Check real SDK/imagery availability; a clearly labelled 2D fallback does not complete this 3D outcome.
+- [ ] Student search and navigation: search room/building, show building/floor/room details and sources, distinguish listed rooms from unconfirmed convention matches, select map destination and open walking directions to building coordinates rather than claim indoor routing.
+- [ ] Timetable connection: accept pasted course-timetable text locally, extract room matches and let students select them; do not invent schedule information or retain private timetable content silently.
+- [ ] Managed project handoff: working responsive preview, complete build configuration and route manifest, checked code and honest hackathon explainer/data exports. Managed version saving is distinct from public publishing; preserve user Git and do not enable Google billing.

@@ -1,0 +1,30 @@
+{
+  "name": "dcu-campus-navigator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.9.0",
+  "scripts": {
+    "dev": "vite --configLoader native",
+    "build": "tsc --noEmit && vite build --configLoader native",
+    "check": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "scrape": "node scripts/scrape-rooms.mjs"
+  },
+  "dependencies": {
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "lucide-react": "0.468.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.16",
+    "@types/react-dom": "19.1.9",
+    "@types/node": "24.7.2",
+    "@vitejs/plugin-react": "5.0.4",
+    "vite": "7.1.9",
+    "typescript": "5.9.3",
+    "tsx": "4.20.6",
+    "cheerio": "1.1.2",
+    "pdfjs-dist": "5.4.296"
+  }
+}

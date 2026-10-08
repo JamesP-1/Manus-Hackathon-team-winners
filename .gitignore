@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.work/
+.manus/
+.manus-webdev/
+.env
+.env.*
+!.env.example
+*.log
