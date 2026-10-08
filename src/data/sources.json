@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-10-08T18:24:58.944Z",
+  "summary": "344 deduplicated public DCU room records with evidence 'listed' from the Campus Explorer location table (18 allhallows, 232 glasnevin, 94 stpatricks).",
+  "roomsPerCampus": {
+    "allhallows": 18,
+    "glasnevin": 232,
+    "stpatricks": 94
+  },
+  "fetchPolicy": "robots.txt checked first; native Node fetch, then curl.exe, then PowerShell Invoke-WebRequest; 3 concurrent requests; 15 s timeout; TLS verification never disabled.",
+  "pages": [
+    {
+      "url": "https://www.dcu.ie/CampusExplorer/poi-information",
+      "status": "ok",
+      "roomsFound": 344,
+      "note": "primary public room inventory (Campus Location Tables); parsed 351 table rows on a single page (no pagination or per-campus sub-pages were served). 11 rows carry no location code (unnamed sports facilities and Morton Stadium) and 1 cell part(s) are not location codes; 0 code(s) referenced a building absent from buildings.json. Details in .work/campus-nav/room-data/log/campus-explorer-parse-report.json.",
+      "transport": "node-fetch"
+    },
+    {
+      "url": "https://www.dcu.ie/campus-maps",
+      "status": "ok",
+      "roomsFound": 0,
+      "note": "official building-code context; 0 existing room record(s) received this page as an additional source URL.",
+      "transport": "node-fetch"
+    },
+    {
+      "url": "https://www.dcu.ie/timetables",
+      "status": "ok",
+      "roomsFound": 0,
+      "note": "official location-code convention and timetable access boundary; 1 existing room record(s) received this page as an additional source URL (glasnevin-QG13).",
+      "transport": "node-fetch"
+    },
+    {
+      "url": "https://www.dcu.ie/registry/room-booking-information-registry",
+      "status": "ok",
+      "roomsFound": 0,
+      "note": "official room-booking context; 0 existing room record(s) received this page as an additional source URL.",
+      "transport": "node-fetch"
+    },
+    {
+      "url": "https://www.dcu.ie/library/group-study-rooms",
+      "status": "ok",
+      "roomsFound": 0,
+      "note": "public group-study-room corroboration; 0 existing room record(s) received this page as an additional source URL.",
+      "transport": "node-fetch"
+    },
+    {
+      "url": "https://www.dcu.ie/sites/default/files/agency/docs/timetable_guide_v7.pdf",
+      "status": "ok",
+      "roomsFound": 0,
+      "note": "public timetable guide corroboration; 1 existing room record(s) received this page as an additional source URL (glasnevin-QG13).",
+      "transport": "node-fetch"
+    },
+    {
+      "url": "https://www.dcu.ie/CampusExplorer",
+      "status": "ok",
+      "roomsFound": 0,
+      "note": "Campus Explorer landing page (checked for additional location tables); 0 existing room record(s) received this page as an additional source URL.",
+      "transport": "node-fetch"
+    },
+    {
+      "url": "https://www.dcu.ie/sites/default/files/2020-11/orientationfacilities.pdf",
+      "status": "ok",
+      "roomsFound": 0,
+      "note": "public orientation facilities guide (checked for location codes); 0 existing room record(s) received this page as an additional source URL.",
+      "transport": "node-fetch"
+    }
+  ],
+  "limitations": [
+    "The public Campus Explorer location table (Campus Location Tables) is the only room inventory; DCU does not state that it is a complete institutional room list, and this export does not claim that.",
+    "DCU states that individual and staff timetables require MyTimetable sign-in, so authenticated timetable and room-booking data was not accessed.",
+    "No room identifiers were generated from naming conventions. Records are emitted only when the public table explicitly lists the qualified location code; combined listings such as \"GLA.SB12.&.SB12-A\" are emitted as the two codes DCU printed.",
+    "Building assignment uses the longest documented building code for the campus (for example SA before S, CA before C). Codes whose second character is B (SB11, XB09) are read as basement rooms of S and X; DCU's table files them under the same map IDs.",
+    "DCU's table labels most X-prefixed rooms \"Postgraduate Residences\" while giving them map ID X (Lonsdale) and labels X101 \"Londsdale Building\"; all X rooms are assigned to the documented X building (Lonsdale). SPC.C208 is listed under \"Belvedere House\" (map 21), which shares the C code with Block C in both DCU's table and OpenStreetMap; it is assigned to the single documented St Patrick's C building.",
+    "Unqualified room numbers on the library group-study page (O'Reilly rooms 1-18, Cregan Library G215/G315) carry no campus/building code and were not added.",
+    "Rows for unnamed sports facilities (pool, courts, pitches, Morton Stadium) and the \"GLA.Invent.Video.Conference\" entry have no location code and are not room records."
+  ]
+}

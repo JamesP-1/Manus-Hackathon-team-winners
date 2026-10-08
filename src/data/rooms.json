@@ -1,0 +1,4132 @@
+[
+  {
+    "id": "allhallows-CG01",
+    "code": "CG01",
+    "buildingId": "allhallows-C",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-ODG01",
+    "code": "ODG01",
+    "buildingId": "allhallows-OD",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-ODG02",
+    "code": "ODG02",
+    "buildingId": "allhallows-OD",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "02",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-ODG03",
+    "code": "ODG03",
+    "buildingId": "allhallows-OD",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-ODG04",
+    "code": "ODG04",
+    "buildingId": "allhallows-OD",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "04",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-PG01",
+    "code": "PG01",
+    "buildingId": "allhallows-P",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-PG02",
+    "code": "PG02",
+    "buildingId": "allhallows-P",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "02",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-PG09",
+    "code": "PG09",
+    "buildingId": "allhallows-P",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "09",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-PG10",
+    "code": "PG10",
+    "buildingId": "allhallows-P",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "10",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-PG11",
+    "code": "PG11",
+    "buildingId": "allhallows-P",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "11",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-SG03",
+    "code": "SG03",
+    "buildingId": "allhallows-S",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-SG05",
+    "code": "SG05",
+    "buildingId": "allhallows-S",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-SG09",
+    "code": "SG09",
+    "buildingId": "allhallows-S",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "09",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-SG10",
+    "code": "SG10",
+    "buildingId": "allhallows-S",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "10",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-SG11",
+    "code": "SG11",
+    "buildingId": "allhallows-S",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "11",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-SG12",
+    "code": "SG12",
+    "buildingId": "allhallows-S",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "12",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-SG13",
+    "code": "SG13",
+    "buildingId": "allhallows-S",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "13",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "allhallows-SG14",
+    "code": "SG14",
+    "buildingId": "allhallows-S",
+    "campus": "allhallows",
+    "floor": "Ground",
+    "roomNumber": "14",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-A141-A",
+    "code": "A141-A",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "41-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-A141-B",
+    "code": "A141-B",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "41-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-A204",
+    "code": "A204",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "04",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-AG01",
+    "code": "AG01",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-AG12",
+    "code": "AG12",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "12",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-AG41",
+    "code": "AG41",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "41",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-AG42",
+    "code": "AG42",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "42",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-AG45",
+    "code": "AG45",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "45",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-AG48-A",
+    "code": "AG48-A",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "48-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-AG48-B",
+    "code": "AG48-B",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "48-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-AG48-C",
+    "code": "AG48-C",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "48-C",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-AG49",
+    "code": "AG49",
+    "buildingId": "glasnevin-A",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "49",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-C136",
+    "code": "C136",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "36",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-C140",
+    "code": "C140",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "40",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-C141",
+    "code": "C141",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "41",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-C143",
+    "code": "C143",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "43",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-C143-A",
+    "code": "C143-A",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "43-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-C165",
+    "code": "C165",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "65",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-C166",
+    "code": "C166",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "66",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-C167",
+    "code": "C167",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "67",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-C204",
+    "code": "C204",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "04",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-C206",
+    "code": "C206",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-C215",
+    "code": "C215",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "15",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CA105",
+    "code": "CA105",
+    "buildingId": "glasnevin-CA",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CA110",
+    "code": "CA110",
+    "buildingId": "glasnevin-CA",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "10",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CA124",
+    "code": "CA124",
+    "buildingId": "glasnevin-CA",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "24",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CAG00",
+    "code": "CAG00",
+    "buildingId": "glasnevin-CA",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "00",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CAG21",
+    "code": "CAG21",
+    "buildingId": "glasnevin-CA",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "21",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CAG22",
+    "code": "CAG22",
+    "buildingId": "glasnevin-CA",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "22",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG01",
+    "code": "CG01",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG02",
+    "code": "CG02",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "02",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG03",
+    "code": "CG03",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG04",
+    "code": "CG04",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "04",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG05",
+    "code": "CG05",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG06",
+    "code": "CG06",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG08-A",
+    "code": "CG08-A",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "08-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG08-B",
+    "code": "CG08-B",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "08-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG11",
+    "code": "CG11",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "11",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG12",
+    "code": "CG12",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "12",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG20",
+    "code": "CG20",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "20",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG35",
+    "code": "CG35",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "35",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG60",
+    "code": "CG60",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "60",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG61",
+    "code": "CG61",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "61",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG68",
+    "code": "CG68",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "68",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-CG86",
+    "code": "CG86",
+    "buildingId": "glasnevin-C",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "86",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-DG12",
+    "code": "DG12",
+    "buildingId": "glasnevin-D",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "12",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-G201",
+    "code": "G201",
+    "buildingId": "glasnevin-G",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-G211",
+    "code": "G211",
+    "buildingId": "glasnevin-G",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "11",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-G213",
+    "code": "G213",
+    "buildingId": "glasnevin-G",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "13",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-G214",
+    "code": "G214",
+    "buildingId": "glasnevin-G",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "14",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H1",
+    "code": "H1",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": null,
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H102",
+    "code": "H102",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "02",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H103",
+    "code": "H103",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H106",
+    "code": "H106",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H108",
+    "code": "H108",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "08",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H112",
+    "code": "H112",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "12",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H116",
+    "code": "H116",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "16",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H119",
+    "code": "H119",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "19",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H122",
+    "code": "H122",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "22",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H124",
+    "code": "H124",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "24",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H125",
+    "code": "H125",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "25",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H134",
+    "code": "H134",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "34",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H135",
+    "code": "H135",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "35",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H136",
+    "code": "H136",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "36",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H137",
+    "code": "H137",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "37",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H138",
+    "code": "H138",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "38",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H139",
+    "code": "H139",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "39",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H206",
+    "code": "H206",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-H306",
+    "code": "H306",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "3",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG00",
+    "code": "HG00",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "00",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG05",
+    "code": "HG05",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG06",
+    "code": "HG06",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG07",
+    "code": "HG07",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "07",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG08",
+    "code": "HG08",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "08",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG09",
+    "code": "HG09",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "09",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG10",
+    "code": "HG10",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "10",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG12",
+    "code": "HG12",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "12",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG13",
+    "code": "HG13",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "13",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG17",
+    "code": "HG17",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "17",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG18",
+    "code": "HG18",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "18",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG19",
+    "code": "HG19",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "19",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG20",
+    "code": "HG20",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "20",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG22",
+    "code": "HG22",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "22",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG23",
+    "code": "HG23",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "23",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-HG50",
+    "code": "HG50",
+    "buildingId": "glasnevin-H",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "50",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-L101",
+    "code": "L101",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-L114",
+    "code": "L114",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "14",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-L114-A",
+    "code": "L114-A",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "14-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-L120",
+    "code": "L120",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "20",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-L125",
+    "code": "L125",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "25",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-L128",
+    "code": "L128",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "28",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-L129",
+    "code": "L129",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "29",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-L223-C",
+    "code": "L223-C",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "23-C",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-L241",
+    "code": "L241",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "41",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-LG25",
+    "code": "LG25",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "25",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-LG26",
+    "code": "LG26",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "26",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-LG27",
+    "code": "LG27",
+    "buildingId": "glasnevin-L",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "27",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-N110A",
+    "code": "N110A",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "10A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-N110A1",
+    "code": "N110A1",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "10A1",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-N115",
+    "code": "N115",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "15",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-N201",
+    "code": "N201",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-N210",
+    "code": "N210",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "10",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-N228",
+    "code": "N228",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "28",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-N229",
+    "code": "N229",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "29",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-NG01",
+    "code": "NG01",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-NG0106",
+    "code": "NG0106",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "0106",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-NG0106-A",
+    "code": "NG0106-A",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "0106-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-NG04",
+    "code": "NG04",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "04",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-NG22",
+    "code": "NG22",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "22",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-NG24",
+    "code": "NG24",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "24",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-NG24-A",
+    "code": "NG24-A",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "24-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-NG24-B",
+    "code": "NG24-B",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "24-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-NG24-C",
+    "code": "NG24-C",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "24-C",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-NG24-D",
+    "code": "NG24-D",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "24-D",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-NG25",
+    "code": "NG25",
+    "buildingId": "glasnevin-N",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "25",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q119",
+    "code": "Q119",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "19",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q120",
+    "code": "Q120",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "20",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q121",
+    "code": "Q121",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "21",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q122",
+    "code": "Q122",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "22",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q157",
+    "code": "Q157",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "57",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q158",
+    "code": "Q158",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "58",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q205",
+    "code": "Q205",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q217",
+    "code": "Q217",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "17",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q218",
+    "code": "Q218",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "18",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q219",
+    "code": "Q219",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "19",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q220",
+    "code": "Q220",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "20",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q301",
+    "code": "Q301",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "3",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q302",
+    "code": "Q302",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "3",
+    "roomNumber": "02",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q303",
+    "code": "Q303",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "3",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q304",
+    "code": "Q304",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "3",
+    "roomNumber": "04",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q305",
+    "code": "Q305",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "3",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-Q306",
+    "code": "Q306",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "3",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG00",
+    "code": "QG00",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "00",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG01",
+    "code": "QG01",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG02",
+    "code": "QG02",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "02",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG03",
+    "code": "QG03",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG04",
+    "code": "QG04",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "04",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG13",
+    "code": "QG13",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "13",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information",
+      "https://www.dcu.ie/sites/default/files/agency/docs/timetable_guide_v7.pdf",
+      "https://www.dcu.ie/timetables"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG15",
+    "code": "QG15",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "15",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG21",
+    "code": "QG21",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "21",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG22",
+    "code": "QG22",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "22",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG27",
+    "code": "QG27",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "27",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG28",
+    "code": "QG28",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "28",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG30",
+    "code": "QG30",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "30",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-QG31",
+    "code": "QG31",
+    "buildingId": "glasnevin-Q",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "31",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-S143",
+    "code": "S143",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "43",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-S144",
+    "code": "S144",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "44",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-S206",
+    "code": "S206",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-S208",
+    "code": "S208",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "08",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-S209",
+    "code": "S209",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "09",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-S210",
+    "code": "S210",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "10",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-S212",
+    "code": "S212",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "12",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-S213",
+    "code": "S213",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "13",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-S378",
+    "code": "S378",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "3",
+    "roomNumber": "78",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SA101",
+    "code": "SA101",
+    "buildingId": "glasnevin-SA",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SA105",
+    "code": "SA105",
+    "buildingId": "glasnevin-SA",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SA106",
+    "code": "SA106",
+    "buildingId": "glasnevin-SA",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SA216",
+    "code": "SA216",
+    "buildingId": "glasnevin-SA",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "16",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SA217",
+    "code": "SA217",
+    "buildingId": "glasnevin-SA",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "17",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SA301",
+    "code": "SA301",
+    "buildingId": "glasnevin-SA",
+    "campus": "glasnevin",
+    "floor": "3",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SAG08",
+    "code": "SAG08",
+    "buildingId": "glasnevin-SA",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "08",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB11",
+    "code": "SB11",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "11",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB12",
+    "code": "SB12",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "12",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB12-A",
+    "code": "SB12-A",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "12-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB13",
+    "code": "SB13",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "13",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB14",
+    "code": "SB14",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "14",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB15",
+    "code": "SB15",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "15",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB16",
+    "code": "SB16",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "16",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB18",
+    "code": "SB18",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "18",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB26",
+    "code": "SB26",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "26",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB28",
+    "code": "SB28",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "28",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB29",
+    "code": "SB29",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "29",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB29-A",
+    "code": "SB29-A",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "29-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB32",
+    "code": "SB32",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "32",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB33",
+    "code": "SB33",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "33",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB38",
+    "code": "SB38",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "38",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SB39",
+    "code": "SB39",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "39",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SG00",
+    "code": "SG00",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "00",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SG00LA",
+    "code": "SG00LA",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "00LA",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SG14",
+    "code": "SG14",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "14",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SG15",
+    "code": "SG15",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "15",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SG16",
+    "code": "SG16",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "16",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SG22",
+    "code": "SG22",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "22",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SG23",
+    "code": "SG23",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "23",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SG24",
+    "code": "SG24",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "24",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-SG25",
+    "code": "SG25",
+    "buildingId": "glasnevin-S",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "25",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-T101",
+    "code": "T101",
+    "buildingId": "glasnevin-T",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-VBG02",
+    "code": "VBG02",
+    "buildingId": "glasnevin-VB",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "02",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-VBG03",
+    "code": "VBG03",
+    "buildingId": "glasnevin-VB",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-VBG05",
+    "code": "VBG05",
+    "buildingId": "glasnevin-VB",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-VBG06",
+    "code": "VBG06",
+    "buildingId": "glasnevin-VB",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-W116",
+    "code": "W116",
+    "buildingId": "glasnevin-W",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "16",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-X101",
+    "code": "X101",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-X130",
+    "code": "X130",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "30",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-X131",
+    "code": "X131",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "31",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-X146",
+    "code": "X146",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "46",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-X157",
+    "code": "X157",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "57",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-X157-A",
+    "code": "X157-A",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "57-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-X157-B",
+    "code": "X157-B",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "57-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-X169",
+    "code": "X169",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "69",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-X176",
+    "code": "X176",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "1",
+    "roomNumber": "76",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-X201",
+    "code": "X201",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "2",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XB09",
+    "code": "XB09",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "09",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XB21",
+    "code": "XB21",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "21",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XB24-B",
+    "code": "XB24-B",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "24-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XB27",
+    "code": "XB27",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Basement",
+    "roomNumber": "27",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG00",
+    "code": "XG00",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "00",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG01",
+    "code": "XG01",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG14",
+    "code": "XG14",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "14",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG15",
+    "code": "XG15",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "15",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG16",
+    "code": "XG16",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "16",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG19",
+    "code": "XG19",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "19",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG20",
+    "code": "XG20",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "20",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG21",
+    "code": "XG21",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "21",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG22",
+    "code": "XG22",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "22",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG24",
+    "code": "XG24",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "24",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG24-A",
+    "code": "XG24-A",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "24-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG24-AA",
+    "code": "XG24-AA",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "24-AA",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG24-B",
+    "code": "XG24-B",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "24-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG28",
+    "code": "XG28",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "28",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG28-A",
+    "code": "XG28-A",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "28-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG28-B",
+    "code": "XG28-B",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "28-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG28-C",
+    "code": "XG28-C",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "28-C",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG28-X",
+    "code": "XG28-X",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "28-X",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG29",
+    "code": "XG29",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "29",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG29-A",
+    "code": "XG29-A",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "29-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG47",
+    "code": "XG47",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "47",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG50",
+    "code": "XG50",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "50",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG51-A",
+    "code": "XG51-A",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "51-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG51-B",
+    "code": "XG51-B",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "51-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG52",
+    "code": "XG52",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "52",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "glasnevin-XG54",
+    "code": "XG54",
+    "buildingId": "glasnevin-X",
+    "campus": "glasnevin",
+    "floor": "Ground",
+    "roomNumber": "54",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B103",
+    "code": "B103",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B108",
+    "code": "B108",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "08",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B117",
+    "code": "B117",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "17",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B118",
+    "code": "B118",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "18",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B119",
+    "code": "B119",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "19",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B121",
+    "code": "B121",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "21",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B132",
+    "code": "B132",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "32",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B132-A",
+    "code": "B132-A",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "32-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B132-B",
+    "code": "B132-B",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "32-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B137-A",
+    "code": "B137-A",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "37-A",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B137-B",
+    "code": "B137-B",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "37-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B138",
+    "code": "B138",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "38",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-B139",
+    "code": "B139",
+    "buildingId": "stpatricks-B",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "39",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-C100L-C",
+    "code": "C100L-C",
+    "buildingId": "stpatricks-C",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "00L-C",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-C100L-D",
+    "code": "C100L-D",
+    "buildingId": "stpatricks-C",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "00L-D",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-C204",
+    "code": "C204",
+    "buildingId": "stpatricks-C",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "04",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-C208",
+    "code": "C208",
+    "buildingId": "stpatricks-C",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "08",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D109",
+    "code": "D109",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "09",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D115",
+    "code": "D115",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "15",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D118",
+    "code": "D118",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "18",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D119",
+    "code": "D119",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "19",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D203",
+    "code": "D203",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D204",
+    "code": "D204",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "04",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D205",
+    "code": "D205",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D207",
+    "code": "D207",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "07",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D208",
+    "code": "D208",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "08",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D210",
+    "code": "D210",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "10",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D211",
+    "code": "D211",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "11",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D318",
+    "code": "D318",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "3",
+    "roomNumber": "18",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D321",
+    "code": "D321",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "3",
+    "roomNumber": "21",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-D325",
+    "code": "D325",
+    "buildingId": "stpatricks-D",
+    "campus": "stpatricks",
+    "floor": "3",
+    "roomNumber": "25",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E200",
+    "code": "E200",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "00",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E201",
+    "code": "E201",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E203",
+    "code": "E203",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E205",
+    "code": "E205",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E206",
+    "code": "E206",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E214",
+    "code": "E214",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "14",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E218",
+    "code": "E218",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "18",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E223",
+    "code": "E223",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "23",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E224",
+    "code": "E224",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "24",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E301",
+    "code": "E301",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "3",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E303",
+    "code": "E303",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "3",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E305",
+    "code": "E305",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "3",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E306",
+    "code": "E306",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "3",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E401",
+    "code": "E401",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "4",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E403",
+    "code": "E403",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "4",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E405",
+    "code": "E405",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "4",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-E406",
+    "code": "E406",
+    "buildingId": "stpatricks-E",
+    "campus": "stpatricks",
+    "floor": "4",
+    "roomNumber": "06",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F109",
+    "code": "F109",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "09",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F113",
+    "code": "F113",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "13",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F114",
+    "code": "F114",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "14",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F115",
+    "code": "F115",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "15",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F117",
+    "code": "F117",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "17",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F119",
+    "code": "F119",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "19",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F121",
+    "code": "F121",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "21",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F125",
+    "code": "F125",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "25",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F126",
+    "code": "F126",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "26",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F130",
+    "code": "F130",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "30",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F133",
+    "code": "F133",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "33",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F134",
+    "code": "F134",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "34",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F202",
+    "code": "F202",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "02",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F203",
+    "code": "F203",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F205",
+    "code": "F205",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "05",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F207",
+    "code": "F207",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "07",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F213",
+    "code": "F213",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "13",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F215",
+    "code": "F215",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "15",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F216",
+    "code": "F216",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "16",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F218",
+    "code": "F218",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "18",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F219",
+    "code": "F219",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "19",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F220",
+    "code": "F220",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "20",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F223",
+    "code": "F223",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "23",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F228",
+    "code": "F228",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "28",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F304",
+    "code": "F304",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "3",
+    "roomNumber": "04",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F327",
+    "code": "F327",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "3",
+    "roomNumber": "27",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F328",
+    "code": "F328",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "3",
+    "roomNumber": "28",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-F332",
+    "code": "F332",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "3",
+    "roomNumber": "32",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-FG02",
+    "code": "FG02",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "Ground",
+    "roomNumber": "02",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-FG03",
+    "code": "FG03",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "Ground",
+    "roomNumber": "03",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-FG08",
+    "code": "FG08",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "Ground",
+    "roomNumber": "08",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-FG09",
+    "code": "FG09",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "Ground",
+    "roomNumber": "09",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-FG10",
+    "code": "FG10",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "Ground",
+    "roomNumber": "10",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-FG17",
+    "code": "FG17",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "Ground",
+    "roomNumber": "17",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-FG20",
+    "code": "FG20",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "Ground",
+    "roomNumber": "20",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-FG22",
+    "code": "FG22",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "Ground",
+    "roomNumber": "22",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-FG24",
+    "code": "FG24",
+    "buildingId": "stpatricks-F",
+    "campus": "stpatricks",
+    "floor": "Ground",
+    "roomNumber": "24",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-G100-B",
+    "code": "G100-B",
+    "buildingId": "stpatricks-G",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "00-B",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-G114",
+    "code": "G114",
+    "buildingId": "stpatricks-G",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "14",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-G216",
+    "code": "G216",
+    "buildingId": "stpatricks-G",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "16",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-G218",
+    "code": "G218",
+    "buildingId": "stpatricks-G",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "18",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-G220",
+    "code": "G220",
+    "buildingId": "stpatricks-G",
+    "campus": "stpatricks",
+    "floor": "2",
+    "roomNumber": "20",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-G401",
+    "code": "G401",
+    "buildingId": "stpatricks-G",
+    "campus": "stpatricks",
+    "floor": "4",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-S110",
+    "code": "S110",
+    "buildingId": "stpatricks-S",
+    "campus": "stpatricks",
+    "floor": "1",
+    "roomNumber": "10",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-SG01",
+    "code": "SG01",
+    "buildingId": "stpatricks-S",
+    "campus": "stpatricks",
+    "floor": "Ground",
+    "roomNumber": "01",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  },
+  {
+    "id": "stpatricks-SG13",
+    "code": "SG13",
+    "buildingId": "stpatricks-S",
+    "campus": "stpatricks",
+    "floor": "Ground",
+    "roomNumber": "13",
+    "sourceUrls": [
+      "https://www.dcu.ie/CampusExplorer/poi-information"
+    ],
+    "evidence": "listed"
+  }
+]
