@@ -17,11 +17,12 @@ const timetableProxy = {
   },
 };
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, command }) => {
   const env = loadEnv(mode, process.cwd(), '');
   const publicValue = (name) => JSON.stringify(process.env[name] || env[name] || '');
   return {
-    base: '/app/',
+    // The public site serves the app at /app/ (see scripts/assemble-site.mjs); dev stays at /.
+    base: command === 'build' ? '/app/' : '/',
     plugins: [react()],
     define: {
       'import.meta.env.VITE_MANUS_API_URL': publicValue('MANUS_API_URL'),
