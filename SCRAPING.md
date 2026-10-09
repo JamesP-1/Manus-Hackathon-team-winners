@@ -2,7 +2,7 @@
 
 ## Purpose
 
-`scripts/scrape-rooms.mjs` creates the static room inventory used by the DCU Campus Navigator. It only targets **public official DCU pages** and never accesses MyTimetable, room-booking systems, or any other sign-in/private endpoint.
+`scripts/scrape-rooms.mjs` creates the static room inventory used by the DCU Maps. It only targets **public official DCU pages** and never accesses MyTimetable, room-booking systems, or any other sign-in/private endpoint.
 
 Run from the repository root:
 

@@ -130,16 +130,16 @@ export default function App() {
         />
       </div>
 
-      <aside className="side-panel">
-        <header className="brand">
-          <span className="brand-mark" aria-hidden="true" />
-          <div>
-            <p className="wordmark">DCU / NAV</p>
+     <aside className="side-panel">
+       <header className="brand">
+         <span className="brand-mark" aria-hidden="true" />
+         <div>
+            <p className="wordmark">DCU MAPS</p>
             <h1>Find your next room.</h1>
-          </div>
-          <button
-            type="button"
-            className="icon-button theme-toggle"
+         </div>
+         <button
+           type="button"
+           className="icon-button theme-toggle"
             onClick={toggleTheme}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             title={theme === 'dark' ? 'Light mode' : 'Dark mode'}

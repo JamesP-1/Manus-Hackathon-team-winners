@@ -18,7 +18,7 @@ import FloorChip from './FloorChip';
 import './timetable.css';
 
 /** Only the feed link is ever stored, and only after the student opts in. */
-const FEED_LINK_STORAGE_KEY = 'dcu-nav.timetable-feed-url';
+const FEED_LINK_STORAGE_KEY = 'dcumaps.timetable-feed-url';
 const DEFAULT_WINDOW_DAYS = 7;
 
 function readRememberedLink(): string | null {
@@ -348,7 +348,7 @@ export default function TimetablePanel({ buildings, rooms, onSelect }: Timetable
           setText(event.target.value);
           setExtracted(null);
         }}
-        placeholder={'Example:\nMon 09:00 — L101\nWed 14:00 — C123'}
+        placeholder="Paste lines from your timetable here"
         spellCheck="false"
       />
       <div className="timetable-actions">
@@ -371,12 +371,10 @@ export default function TimetablePanel({ buildings, rooms, onSelect }: Timetable
                   key={resolution.room?.id ?? `${resolution.normalized}-${resolution.building?.id ?? 'unknown'}`}
                   onClick={() => onSelect(resolution)}
                 >
-                  <span className={`result-icon ${resolution.status === 'listed' ? 'listed' : 'decoded'}`}>
-                    <MapPin size={16} aria-hidden="true" />
-                  </span>
+                  <FloorChip floor={resolution.floor} />
                   <span className="result-main">
                     <code>{resolution.room?.code ?? resolution.normalized}</code>
-                    <small>{resolution.building ? `${resolution.building.name}${resolution.floor ? ` · Floor ${resolution.floor}` : ''}` : resolution.message}</small>
+                    <small>{resolution.building ? resolution.building.name : resolution.message}</small>
                   </span>
                   <span className={`result-badge ${resolution.status === 'listed' ? 'listed' : 'decoded'}`}>
                     {resolution.status === 'listed' ? 'Listed' : 'Decoded'}

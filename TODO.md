@@ -1,4 +1,4 @@
-# DCU Campus Navigator outcomes
+# DCU Maps outcomes
 
 - [ ] Public room inventory: scrape all publicly discoverable DCU room listings and associate each with its building/campus; retain source URLs, deduplicate, provide a rerunnable scraper and state uncovered or inaccessible sources. Never synthesize rooms into the inventory from the naming convention.
 - [ ] Building data and decoding: source current building code/name associations and coordinates with precision labels; decode L101 as building L / first floor / room 01, support verified ground-floor and multi-letter forms, and handle unknown/ambiguous campuses without fabricating answers.

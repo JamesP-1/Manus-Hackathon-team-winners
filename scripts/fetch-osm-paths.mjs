@@ -28,7 +28,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT = resolve(__dirname, '../src/data/campus-paths.geojson');
-const USER_AGENT = 'dcu-campus-navigator/0.1 (student hackathon prototype; scripts/fetch-osm-paths.mjs)';
+const USER_AGENT = 'dcumaps/0.1 (student hackathon prototype; scripts/fetch-osm-paths.mjs)';
 const ATTRIBUTION = '© OpenStreetMap contributors, ODbL 1.0';
 
 const OVERPASS_ENDPOINTS = [

@@ -138,6 +138,24 @@ function prefersReducedMotion(): boolean {
   return typeof window !== 'undefined' && Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
 }
 
+/**
+ * Padding that keeps a fitted area inside the part of the map not covered by the side panel:
+ * the bottom sheet on phones, the floating panel on the left on desktop.
+ */
+function visibleAreaPadding(map: L.Map, base: number): L.FitBoundsOptions {
+  const panel = document.querySelector('.side-panel');
+  const mapRect = map.getContainer().getBoundingClientRect();
+  if (!panel) return { padding: [base, base] };
+  const panelRect = panel.getBoundingClientRect();
+  const coversBottom = panelRect.width >= mapRect.width * 0.8;
+  if (coversBottom) {
+    const hidden = Math.max(0, mapRect.bottom - panelRect.top);
+    return { paddingTopLeft: [base, base], paddingBottomRight: [base, hidden + base] };
+  }
+  const hidden = Math.max(0, panelRect.right - mapRect.left);
+  return { paddingTopLeft: [hidden + base, base], paddingBottomRight: [base, base] };
+}
+
 function flightOptions(): L.ZoomPanOptions {
   return prefersReducedMotion() ? { animate: false } : { animate: true, duration: 1 };
 }
@@ -414,7 +432,7 @@ export default function OsmCampusMap({
     if (match.position) bounds.extend(match.position);
 
     if (bounds.isValid()) {
-      map.flyToBounds(bounds, { ...flightOptions(), maxZoom: BUILDING_ZOOM, padding: [48, 48] });
+      map.flyToBounds(bounds, { ...flightOptions(), ...visibleAreaPadding(map, 48), maxZoom: BUILDING_ZOOM });
     }
   }, [selectedBuilding, matchById, mapVersion, accent]);
 
@@ -587,7 +605,7 @@ export default function OsmCampusMap({
     routeLayerRef.current = L.layerGroup([casing, line]).addTo(current.map);
     if (fittedRouteForRef.current !== selectedBuilding.id) {
       fittedRouteForRef.current = selectedBuilding.id;
-      current.map.flyToBounds(line.getBounds(), { ...flightOptions(), padding: [56, 56], maxZoom: BUILDING_ZOOM });
+      current.map.flyToBounds(line.getBounds(), { ...flightOptions(), ...visibleAreaPadding(current.map, 56), maxZoom: BUILDING_ZOOM });
     }
   }, [route, selectedBuilding, mapVersion, accent]);
 

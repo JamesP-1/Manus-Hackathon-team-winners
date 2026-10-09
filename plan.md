@@ -1,4 +1,4 @@
-# DCU Campus Navigator — implementation plan
+# DCU Maps — implementation plan
 
 ## Product
 An interactive Google-powered 3D view of DCU that translates timetable room codes into named buildings and floors. Search a room, select its building, fly the camera there, and open Google Maps walking directions. Collect all publicly discoverable DCU room listings with provenance; do not claim a complete institutional inventory without evidence. Default map view is Glasnevin; preserve campus identifiers wherever other campuses are discovered.
@@ -53,9 +53,9 @@ Signatures: stacked room-code typographic lockup, building-code capsule pins, th
 Interaction: immediate search; selectable results; selection makes the destination and floor obvious; reduced-motion support.
 Animation: short panel transitions and a gentle camera flight (roughly one second), no distracting continuous orbit by default; optional overview control.
 Typography: system sans-serif (Segoe UI/Inter compatible), bold concise headings, tabular/monospaced room codes, legible 14–16px detail copy.
-Brand essence: 'Your room code, made clear.' For DCU students moving between classes; direct, calm, dependable.
+Brand essence: 'Find your next room.' For DCU students moving between classes; direct, calm, dependable.
 Voice: 'Find your next room.' and 'Building found. Room not confirmed in public listings.'
-Wordmark: DCU / NAV with a custom path-corner locator mark drawn as a simple vector; do not imply official university endorsement.
+Wordmark: DCU MAPS with a custom path-corner locator mark drawn as a simple vector; do not imply official university endorsement.
 
 ## Build workflow
 Scaffold and enable diagnostics → start four independent agents → parent tests Google proxy and installs dependencies → integrate supplied modules/data → run build and code tests → read-only review and targeted fixes → start declared local preview and verify HTTP/routes → save a managed checkpoint if appropriate. Do not publicly publish without existing authorization. Keep Google imagery inside its supported SDK, visible attribution intact, and scraped DCU facts distinct from Google imagery.

@@ -1,8 +1,8 @@
-# DCU NAV interface
+# DCU Maps interface
 
 ## Scope
 
-The interface is a **map-first, student-facing wayfinding prototype**. It deliberately avoids an institutional or marketing presentation: the map stays visible behind a compact navigation panel, with a clear DCU / NAV locator mark and an explicit **Independent student prototype** label.
+The interface is a **map-first, student-facing wayfinding prototype**. It deliberately avoids an institutional or marketing presentation: the map stays visible behind a compact navigation panel, with a clear DCU Maps locator mark and an explicit **Independent student prototype** label.
 
 ## Core flow
 

@@ -22,8 +22,8 @@ import type { Building, Room } from '../src/types';
 
 const buildings = buildingData as Building[];
 const rooms = roomData as Room[];
-const fixture = readFileSync(new URL('./fixtures/dcu-timetable.ics', import.meta.url), 'utf8');
-const courseId = 'e631cb22-e616-9d64-58ba-abd77acfa225';
+const fixture = readFileSync(new URL('./fixtures/sample-timetable.ics', import.meta.url), 'utf8');
+const courseId = '11111111-2222-4333-8444-555555555555';
 const proxiedUrl = `/api/timetable/events?course=${courseId}`;
 
 function response(body: string, init: { status?: number; type?: string } = {}): Response {
@@ -52,7 +52,7 @@ test('rejects foreign hosts, missing ids and junk with input errors', () => {
     [`https://example.com/?course=${courseId}`, /Only links from timetable.redbrick.dcu.ie/],
     ['https://timetable.redbrick.dcu.ie/', /no course id/],
     ['abc', /Enter a course id/],
-    ['e631cb22-e616-9d64-58ba', /Enter a course id/],
+    ['11111111-2222-4333', /Enter a course id/],
   ];
   for (const [input, pattern] of cases) {
     assert.throws(() => parseTimetableInput(input), (error: unknown) => error instanceof TimetableError && error.kind === 'input' && pattern.test(error.message), input);
@@ -105,19 +105,19 @@ test('resolves every room in the fixture feed through the real datasets', () => 
   const source = parseTimetableInput(courseId);
   const feed = parseTimetableText(fixture, source, buildings, rooms);
 
-  assert.equal(feed.classes.length, 198);
+  assert.equal(feed.classes.length, 8);
   assert.equal(feed.skipped, 0);
   assert.deepEqual(feed.roomSummary.unresolved, []);
   assert.deepEqual(feed.roomSummary.decoded, ['FTG13']);
-  assert.deepEqual(feed.roomSummary.listed, ['CG12', 'HG23', 'L101', 'L114', 'L125', 'L128', 'LG25', 'LG26', 'QG15', 'QG22', 'SA101', 'SA301']);
+  assert.deepEqual(feed.roomSummary.listed, ['CG12', 'HG23', 'L101', 'L125', 'L128', 'LG25', 'LG26', 'QG15', 'SA101', 'SA301']);
   assert.ok(feed.classes.every((cls) => cls.primary?.resolution?.building));
 
-  const first = feed.classes.find((cls) => cls.id === '3ff5d0c9-e781-46db-991a-3bef2dc0e92d');
+  const first = feed.classes.find((cls) => cls.id === 'sample-0001');
   assert.ok(first);
-  assert.equal(first.moduleCode, 'CSC1020');
-  assert.equal(first.title, 'Systems Analysis');
+  assert.equal(first.moduleCode, 'XYZ1001');
+  assert.equal(first.title, 'Example Module One');
   assert.equal(first.activity, 'Lecture');
-  assert.equal(first.staff, 'Lee H');
+  assert.equal(first.staff, 'Example Lecturer');
   assert.equal(first.primary?.resolution?.building?.name, 'Stokes Extension');
 
   const lab = feed.classes.find((cls) => cls.locations.length === 4);
@@ -132,11 +132,11 @@ test('upcoming, grouping and next-class helpers follow the clock', () => {
   const now = new Date('2026-10-08T09:30:00Z');
 
   const next = nextClass(feed.classes, now);
-  assert.equal(next?.summary, 'CSC1028 Probability & Statistics (Lecture)');
+  assert.equal(next?.summary, 'XYZ1002 Example Module Two (Lecture)');
   assert.equal(next?.start.toISOString(), '2026-10-08T09:00:00.000Z');
 
   const week = upcomingClasses(feed.classes, now, 7);
-  assert.equal(week.length, 22);
+  assert.equal(week.length, 5);
   assert.ok(week.every((cls) => cls.end > now));
   assert.ok(upcomingClasses(feed.classes, now).length > week.length);
 
@@ -156,7 +156,7 @@ test('loadTimetable fetches through the proxy and reports proxy, http and empty-
     return response(fixture);
   });
   assert.deepEqual(calls, [proxiedUrl]);
-  assert.equal(feed.classes.length, 198);
+  assert.equal(feed.classes.length, 8);
 
   await assert.rejects(
     loadTimetable(courseId, buildings, rooms, async () => response('<!doctype html><html></html>', { type: 'text/html' })),

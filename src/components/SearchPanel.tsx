@@ -62,11 +62,6 @@ export default function SearchPanel({ buildings, rooms, onSelect, selected }: Se
     onSelect(resolveRoom(trimmedQuery, buildings, rooms));
   };
 
-  const useExample = () => {
-    setQuery('L101');
-    onSelect(resolveRoom('L101', buildings, rooms));
-  };
-
   const hasResults = matchingRooms.length > 0 || matchingBuildings.length > 0;
 
   return (
@@ -98,10 +93,7 @@ export default function SearchPanel({ buildings, rooms, onSelect, selected }: Se
       {!trimmedQuery && (
         <>
           <div className="search-empty-state">
-            <p>Type a room code like <code>L101</code> or a building name. Press Enter to decode a code that isn't listed.</p>
-            <button type="button" className="example-code" onClick={useExample}>
-              Try <code>L101</code><ChevronRight size={14} aria-hidden="true" />
-            </button>
+            <p>Type a room code from your timetable or a building name. Press Enter to decode a code that isn't listed.</p>
           </div>
           <div className="floor-legend" aria-label="Floor colours">
             <span className="floor-legend-title">Floors</span>

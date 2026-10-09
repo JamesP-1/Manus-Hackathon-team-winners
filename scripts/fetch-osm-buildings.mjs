@@ -27,7 +27,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT = resolve(__dirname, '../src/data/campus-buildings.geojson');
 const BUILDINGS_JSON = resolve(__dirname, '../src/data/buildings.json');
-const USER_AGENT = 'dcu-campus-navigator/0.1 (student hackathon prototype; scripts/fetch-osm-buildings.mjs)';
+const USER_AGENT = 'dcumaps/0.1 (student hackathon prototype; scripts/fetch-osm-buildings.mjs)';
 
 const OVERPASS_ENDPOINTS = [
   'https://overpass-api.de/api/interpreter',

@@ -167,8 +167,15 @@ h1, h2, h3, p { margin: 0; }
 
 @keyframes slide-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 @media (max-width: 720px) {
-  .side-panel { top: auto; left: 0; right: 0; bottom: 0; width: auto; max-height: 55vh; border-radius: 16px 16px 0 0; animation-name: slide-up; }
-  .brand h1 { font-size: 18px; }
+  /* Bottom sheet: kept short so most of the screen stays map. */
+  .side-panel { top: auto; left: 0; right: 0; bottom: 0; width: auto; max-height: 40vh; border-radius: 16px 16px 0 0; animation-name: slide-up; }
+  .brand { padding: 10px 14px 0; }
+  .brand h1 { font-size: 15px; }
+  .brand-mark { width: 22px; height: 22px; }
+  .tabs { margin: 8px 14px 0; }
+  .tabs button { min-height: 34px; }
+  .panel-body { padding: 10px 14px 14px; gap: 12px; }
+  .panel-footer { display: none; }
   .campus-map__status, .campus-map__overview-control, .campus-map__selection { left: 12px !important; right: auto !important; }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -1,6 +1,6 @@
-# DCU Campus Navigator
+# DCU Maps
 
-A student hackathon project connecting DCU timetable room codes to buildings, floors and an interactive Google Maps view. Independent prototype, not an official DCU service.
+DCU Maps is a student hackathon project connecting DCU timetable room codes to buildings, floors and an interactive Google Maps view. Independent prototype, not an official DCU service.
 
 ## Setup checkpoint
 

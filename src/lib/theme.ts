@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 export type Theme = 'light' | 'dark';
-const STORAGE_KEY = 'dcu-nav.theme';
+const STORAGE_KEY = 'dcumaps.theme';
 
 function systemTheme(): Theme {
   return typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>DCU NAV</title>
-<meta name="description" content="Hackathon pitch for DCU NAV: a campus navigator that turns a timetable room code into a building, a floor and a walking route.">
+<title>DCU Maps — Find your next room</title>
+<meta name="description" content="DCU Maps is a campus navigator that turns a timetable room code into a building, a floor and a walking route.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -13,16 +13,16 @@
 <body>
 
 <header class="topbar">
-  <a class="brand" href="#top" aria-label="DCU NAV">
+  <a class="brand" href="#top" aria-label="DCU Maps">
     <span class="brand-mark" aria-hidden="true"></span>
-    <span class="wordmark">DCU / NAV</span>
+    <span class="wordmark">DCU MAPS</span>
   </a>
   <nav class="topnav" aria-label="Sections">
     <a href="#problem">Problem</a>
     <a href="#how">How it works</a>
-    <a href="#why">Why it wins</a>
+    <a href="#why">Features</a>
     <a href="#tech">Under the hood</a>
-    <a class="pill" href="https://github.com/JamesP-1/Manus-Hackathon-team-winners" target="_blank" rel="noreferrer">Repository</a>
+    <a class="pill" href="/app/">Open the app</a>
     <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">
       <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
       <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
@@ -34,7 +34,7 @@
   (function () {
     var root = document.documentElement;
     var button = document.getElementById('theme-toggle');
-    function stored() { try { return localStorage.getItem('dcu-nav.theme'); } catch (e) { return null; } }
+    function stored() { try { return localStorage.getItem('dcumaps.theme'); } catch (e) { return null; } }
     function current() {
       var pick = root.getAttribute('data-theme');
       if (pick) return pick;
@@ -52,7 +52,7 @@
     button.addEventListener('click', function () {
       var next = current() === 'dark' ? 'light' : 'dark';
       apply(next);
-      try { localStorage.setItem('dcu-nav.theme', next); } catch (e) { /* private mode */ }
+      try { localStorage.setItem('dcumaps.theme', next); } catch (e) { /* private mode */ }
     });
   })();
 </script>
@@ -62,15 +62,15 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">Manus Hackathon · Team Winners · DCU</p>
+      <p class="eyebrow">For DCU students · Glasnevin · St Patrick's · All Hallows</p>
       <h1>Your room code, <span class="accent">made clear.</span></h1>
       <p class="lede">
-        A DCU timetable says <code>SA216</code>. DCU NAV turns that into Stokes Extension,
+        A DCU timetable says <code>SA216</code>. DCU Maps turns that into Stokes Extension,
         floor 2, and a walking route from where you're standing. No account, no API key,
         and nothing about you leaves the browser.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="/app/" target="_blank" rel="noreferrer">Open the live demo</a>
+        <a class="btn btn-primary" href="/app/">Open DCU Maps</a>
         <a class="btn btn-ghost" href="#how">See how it works</a>
       </div>
       <dl class="hero-stats">
@@ -81,7 +81,7 @@
       </dl>
     </div>
     <figure class="hero-shot">
-      <img src="assets/route-floor2.jpg" alt="DCU NAV showing SA216 on floor 2 of Stokes Extension, the building footprint filled in floor-2 orange, and a 350 m walking route drawn from the main entrance" width="800" height="728">
+      <img src="assets/route-floor2.jpg" alt="DCU Maps showing SA216 on floor 2 of Stokes Extension, the building footprint filled in floor-2 orange, and a 350 m walking route drawn from the main entrance" width="800" height="847">
       <figcaption>SA216 selected. The footprint, pin, route and panel all take floor 2's colour.</figcaption>
     </figure>
   </section>
@@ -120,7 +120,7 @@
       <li>
         <span class="step-no">1</span>
         <h3>Search or connect</h3>
-        <p>Type a code, paste timetable text, or link your <a href="https://timetable.redbrick.dcu.ie/" target="_blank" rel="noreferrer">timetable.redbrick.dcu.ie</a> feed. 198 classes from a real feed parse in under a second.</p>
+        <p>Type a code, paste timetable text, or link your <a href="https://timetable.redbrick.dcu.ie/" target="_blank" rel="noreferrer">timetable.redbrick.dcu.ie</a> feed. Everything stays on your device.</p>
       </li>
       <li>
         <span class="step-no">2</span>
@@ -134,8 +134,8 @@
       </li>
     </ol>
     <figure class="shot-wide">
-      <img src="assets/room-floor1.jpg" alt="DCU NAV after searching L101: the panel shows McNulty Building, floor 1, room 01 with a floor-1 blue banner, and the McNulty footprint is highlighted on the map" width="800" height="728">
-      <figcaption>L101: McNulty Building, floor 1, room 01. Floor 1 is blue everywhere it appears.</figcaption>
+      <img src="assets/room-ground.jpg" alt="DCU Maps after searching QG15: the panel shows DCU Business School, ground floor, room 15 with a green ground-floor banner, and the footprint is highlighted on the map" width="800" height="847">
+      <figcaption>QG15: DCU Business School, ground floor, room 15. Ground floor is green everywhere it appears.</figcaption>
     </figure>
   </section>
 
@@ -160,8 +160,8 @@
   <!-- WHY IT WINS -->
   <section id="why" class="section why">
     <div class="section-head">
-      <p class="eyebrow">Why it wins</p>
-      <h2>Real data, real routing, zero dependencies on anyone's API.</h2>
+      <p class="eyebrow">Why DCU Maps</p>
+      <h2>Real rooms, real routes, no sign-up.</h2>
     </div>
     <div class="cards">
       <article class="card">
@@ -170,7 +170,7 @@
       </article>
       <article class="card">
         <h3>Works with no API key</h3>
-        <p>Building footprints and the path network are pulled from OpenStreetMap once and shipped with the app. Tiles come from OSM. There is no Google bill and nothing to expire on demo day.</p>
+        <p>Building footprints and the path network are pulled from OpenStreetMap once and shipped with the app. Tiles come from OSM. No Google account, no API key, nothing to sign up for.</p>
       </article>
       <article class="card">
         <h3>Routing runs in the browser</h3>
@@ -194,8 +194,8 @@
   <!-- TIMETABLE SHOT -->
   <section class="section">
     <figure class="shot-wide">
-      <img src="assets/timetable.jpg" alt="DCU NAV timetable tab listing upcoming classes grouped by day, each with a floor chip, room code, listed or decoded badge and building name, next to the campus map" width="800" height="846">
-      <figcaption>A real student feed: 198 classes, 13 rooms, all matched. The next class is flagged and one click flies the map to it.</figcaption>
+      <img src="assets/timetable-paste.jpg" alt="DCU Maps timetable tab with pasted timetable lines and the room codes it found, each with a floor chip, listed badge and building name" width="800" height="847">
+      <figcaption>Paste lines from your timetable, or connect your feed link, and every room is matched to its building and floor. One click flies the map there.</figcaption>
     </figure>
   </section>
 
@@ -245,8 +245,8 @@
   <!-- NEXT -->
   <section class="section next">
     <div class="section-head">
-      <p class="eyebrow">What's next</p>
-      <h2>Built in a day. Ready to grow.</h2>
+      <p class="eyebrow">Coming next</p>
+      <h2>Where DCU Maps is heading.</h2>
     </div>
     <ul class="roadmap">
       <li><strong>Verified entrances.</strong> Routes end at the footprint today; mapping real doors makes the last 20 metres exact.</li>
@@ -260,13 +260,12 @@
 
 <footer class="footer">
   <div>
-    <span class="wordmark">DCU / NAV</span>
-    <p>Independent student prototype. Not an official DCU service. Map data © OpenStreetMap contributors (ODbL).</p>
+    <span class="wordmark">DCU MAPS</span>
+    <p>Independent student project. Not an official DCU service. Room data from DCU's public Campus Explorer pages. Map data © OpenStreetMap contributors (ODbL).</p>
   </div>
   <div class="run">
-    <p>Run it locally</p>
-    <pre><code>npm ci
-npm run dev</code></pre>
+    <p>Open source</p>
+    <a class="btn btn-ghost" href="https://github.com/JamesP-1/Manus-Hackathon-team-winners" target="_blank" rel="noreferrer">View on GitHub</a>
   </div>
 </footer>
 
